@@ -12,7 +12,8 @@
     <div id="main">
       <div id="container">
         <div id="content" role="main">
-          <img src="./logo.png">
+            <header>
+          <img src="./logo.png" alt="EPAM logo">
           <h1 id="home"><b>HTML Elements</b></h1>
           <hr>
           <nav>
@@ -24,10 +25,13 @@
               <a href="#blockquotes"><b>Blockquotes</b></a>
           </nav>
           <hr>
+            </header>
+            <main>
           <p>
             Pay attention to h1 tag inside section element. Font-size for h1 is the same as font-size for h2, because we have to use only one h1 on the page, and it is commonly used inside header.
           </p>
-          <h2 id="headers">Header 2</h2>
+                <section id="headers">
+          <h2>Header 2</h2>
           <h3>Header 3</h3>
           <h4>Header 4</h4>
           <h5>Header 5</h5>
@@ -40,8 +44,10 @@
             <abbr title="Hyper Text Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr> are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. To copy a file type COPY <i>filename.</i> <s>Dinner`s at 5:00.</s> <mark>Let’s make that 7.</mark> This <s>text</s> has been struck.
           </p>
           <hr>
+                </section>
+                <section id="table">
+                <h2>Table</h2>
           <table>
-            <h2 id="table">Table</h2>
             <thead>
               <tr>
                 <th>Header</th>
@@ -68,10 +74,9 @@
               </tr>
             </tbody>
           </table>
-
-          <h2 id="list">
-            Unordered List
-          </h2>
+                </section>
+        <section id="list">
+          <h2>Unordered List</h2>
           <ul>
             <li>List item 1</li>
             <li>List item 2
@@ -91,7 +96,8 @@
             </li>
             <li>List item 3</li>
           </ol>
-          <dl><h3>Definition List</h3>
+                <h3>Definition List</h3>
+          <dl>
             <dt>defines terms 1</dt>
             <dd>description 1</dd>
             <dt>defines terms 2</dt>
@@ -104,7 +110,9 @@
             <option value="JS">JS</option>
           </select>
           <hr>
-          <h2 id="text-formats">Text formats</h2>
+        </section>
+                <section id="text-formats">
+          <h2>Text formats</h2>
           <h3>Article Text</h3>
           <article>
             <h2>Article title</h2>
@@ -126,35 +134,37 @@ both           spaces and
   justify-content: center;
 }
           </pre>
-          <h2 id="blockquotes">Blockquotes</h2>
+                </section>
+                <section id="blockquotes">
+          <h2>Blockquotes</h2>
           <p>
             Let’s keep it simple. Italics are good to help set it off from the body text. Be sure to style the citation.
           </p>
           <blockquote>
-            <i>
-            "If you go back a few hundred years, what we take for granted today would seem like magic-being able to talk to people over long distances, to transmit images, flying, accessing vast amounts of data like an oracle. These are all things that would have been considered magic a few hundred years ago."
-            </i><br>
+            "If you go back a few hundred years, what we take for granted today would seem like magic-being able to talk to people over long distances, to transmit images, flying, accessing vast amounts of data like an oracle. These are all things that would have been considered magic a few hundred years ago."<br>
             <a href="#">Elon Musk</a>
           </blockquote>
           <hr>
-          <form accept-charset="x-UTF-16LE-BOM" action="" method="get" name="personal-data-form">
+                </section>
+          <form accept-charset="utf-8" method="get" name="personal-data-form">
             <fieldset>
 
                 <label for="first-name">First name:</label>
                 <input type="text" id="first-name" name="first-name">
-            <p>
+                <br>
                 <label for="surname">Surname:</label>
                 <input type="text" id="surname" name="surname">
-            </p>
+                <br>
                 <label for="user-mail">Email:</label>
                 <input type="email" id="user-mail" name="user-mail">
 
             </fieldset>
+              <textarea id="feedback" name="feedback" cols="25" rows="10"></textarea>
+              <div class="button">
+                  <button type="submit">Submit</button>
+              </div>
           </form>
-          <textarea id="feedback" name="feedback" cols="25" rows="10"></textarea>
-          <div class="button">
-            <button type="submit">Submit</button>
-          </div>
+            </main>
 <footer>
   © Copyright Epam Systems
 </footer>
