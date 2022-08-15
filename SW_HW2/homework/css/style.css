@@ -17,7 +17,7 @@ h2+p {
     font-style: italic;
 }
 section.tm-content-box a:visited {
-    border-bottom-color: lightskyblue;
+    text-decoration-line: underline;
 }
 section.tm-content-box a:hover {
     color: lightskyblue;
@@ -107,4 +107,10 @@ div.tm-banner-inner {
         height: 30%;
         width: 30%;
     }
+    #about, .blocks, #ideas, section.heading.tm-content-box, section.tm-content-box {
+        display: none;
+    }
+}
+div.tm-content-box.flex-2-col {
+    background: linear-gradient(to right bottom, lightskyblue 5%, white 5%);
 }
