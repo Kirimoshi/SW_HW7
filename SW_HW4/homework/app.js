@@ -97,13 +97,21 @@ function getAdultAppleLovers(data) {
 }
 
 function getKeys(obj) {
+    const keysArray = [];
 
+    for (let key in obj) {
+        keysArray.push(key);
+    }
+
+    return keysArray;
 }
-
-/*
 
 function getValues(obj) {
+    const valuesArray = [];
 
+    for (let key in obj) {
+        valuesArray.push(obj[key]);
+    }
+
+    return valuesArray;
 }
-
-*/
