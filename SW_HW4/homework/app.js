@@ -33,18 +33,24 @@ function forEach(arr, func) {
 function map(arr, func) {
     const copyArray = [];
 
-    forEach(arr, function func2 (el) {
-        return copyArray.push(func(el));}
-    );
+    forEach(arr, (el) => { return copyArray.push(func(el)) })
 
     return copyArray;
 }
 
-/*
 function filter(arr, func) {
+    const filteredArray = [];
 
+    forEach(arr, (el) => {
+        if (func(el)) {
+            return filteredArray.push(el);
+        }
+    })
+
+    return filteredArray;
 }
 
+/*
 function getAdultAppleLovers(data) {
 
 }
