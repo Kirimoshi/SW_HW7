@@ -6,14 +6,15 @@ let percentagePerYear = Number(prompt('Please input percentage of year. It shoul
 const initAmountLimit = 1000;
 const numberOfYearsLimit = 1;
 const percentagePerYearLimit = 100;
-const percDivider = 100;
+const percentageDivider = 100;
 const fixedFractionDigits = 2;
 
 
-if (initAmount < initAmountLimit || numberOfYears < numberOfYearsLimit || percentagePerYear > percentagePerYearLimit) {
+if (isNaN(initAmount) || isNaN(numberOfYears) || isNaN(percentagePerYear) ||
+    initAmount < initAmountLimit || numberOfYears < numberOfYearsLimit || percentagePerYear > percentagePerYearLimit) {
     alert('Invalid input data');
 } else {
-    let totalAmount = initAmount * Math.pow(1 + percentagePerYear / percDivider, Number(numberOfYears));
+    let totalAmount = initAmount * Math.pow(1 + percentagePerYear / percentageDivider, Number(numberOfYears));
     let totalProfit = totalAmount - initAmount;
     let resultMessage = 'Initial amount: ' + initAmount.toFixed(fixedFractionDigits) + '\nNumber of years: ' +
         numberOfYears + '\nPercentage of year: ' + percentagePerYear.toFixed(fixedFractionDigits) +
