@@ -11,7 +11,7 @@ function storeNames(...args) {
 }
 
 function getDifference(arg1, arg2) {
-    return arg1 > arg2 ? arg1 - arg2 : arg2 - arg1;
+    return arg1 >= arg2 ? arg1 - arg2 : arg2 - arg1;
 }
 
 function negativeCount(arr) {
@@ -41,13 +41,16 @@ function letterCount(givenString, givenLetter) {
 function countPoints(collection) {
     let countPointsSum = 0;
     const colon = ':';
+    const ourTeamWinsScoreIncrement = 3;
 
     for(let i = 0; i < collection.length; i++) {
         if(+collection[i].split(colon)[0] > +collection[i].split(colon)[1]){
-            countPointsSum += 3;
+            countPointsSum += ourTeamWinsScoreIncrement;
         } else if(+collection[i].split(colon)[0] === +collection[i].split(colon)[1]) {
             countPointsSum += 1;
-        } else {}
+        } else {
+            countPointsSum += 0;
+        }
     }
 
     return countPointsSum;
