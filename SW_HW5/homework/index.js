@@ -6,8 +6,8 @@ function isBigger(arg1, arg2) {
     return arg1 > arg2;
 }
 
-function storeNames() {
-
+function storeNames(...args) {
+    return args;
 }
 
 function getDifference(arg1, arg2) {
