@@ -3,27 +3,15 @@ function isFunction(functionToCheck) {
 }
 
 const pipe = (value, ...funcs) => {
-	return funcs.reduce(function(acc, currentFunction) {
-		if (!isFunction(currentFunction)) {
-			throw new Error();
+	return funcs.reduce(function(acc, currentFunction, currentIndex) {
+		try {
+			if (!isFunction(currentFunction)) {
+				throw new Error(`Provided argument at position ${currentIndex} is not a function`);
+			}
+		} catch (e) {
+			alert(e);
 		}
 
 		return currentFunction(acc)
 	}, value)
 }
-
-const replaceUnderscoreWithSpace = (value) => value.replace(/_/g, ' ');
-const capitalize = (value) =>
-	value
-		.split(' ')
-		.map((val) => val.charAt(0).toUpperCase() + val.slice(1))
-		.join(' ');
-const appendGreeting = (value) => `Hello, ${value}!`;
-
-const error = pipe('john_doe', replaceUnderscoreWithSpace, capitalize, '');
-
-alert(error);
-
-const result = pipe('john_doe', replaceUnderscoreWithSpace, capitalize, appendGreeting);
-
-alert(result);
