@@ -18,11 +18,3 @@ const pipe = (value, ...funcs) => {
 		.map((val) => val.charAt(0).toUpperCase() + val.slice(1))
 		.join(' ');
 const appendGreeting = (value) => `Hello, ${value}!`;
-
-const error = pipe('john_doe', replaceUnderscoreWithSpace, capitalize, '');
-
-alert(error);
-
-const result = pipe('john_doe', replaceUnderscoreWithSpace, capitalize, appendGreeting);
-
-alert(result);
