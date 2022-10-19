@@ -24,3 +24,16 @@ table, td, th {
     border: 1px solid silver;
     border-collapse: collapse;
 }
+
+tr:hover {
+    background-color: lightskyblue;
+}
+
+button {
+    border: none;
+    background-color: white;
+}
+
+span {
+    cursor: pointer;
+}
