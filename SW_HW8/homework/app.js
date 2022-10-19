@@ -301,11 +301,62 @@ regionInput.addEventListener('click', function(){
             });
 
             doubleArrowAreaSpan.style.display = 'none';
-            upArrowCountrySpan.style.display = 'contents';
+            upArrowAreaSpan.style.display = 'contents';
         })
-        upArrowAreaSpan.addEventListener('click', )
-        downArrowAreaSpan.addEventListener('click', )
+        upArrowAreaSpan.addEventListener('click', function() {
+            removeTableBody();
 
+            let tBody = document.createElement('tbody');
+            table.appendChild(tBody);
+
+            _filteredCountryList.sort(compareCountriesArea).reverse().forEach(function (item) {
+                let tr = tBody.insertRow();
+                let _countryName = tr.insertCell();
+                _countryName.appendChild(document.createTextNode(item.name));
+                let _capitalName = tr.insertCell();
+                _capitalName.appendChild(document.createTextNode(item.capital));
+                let _regionName = tr.insertCell();
+                _regionName.appendChild(document.createTextNode(item.region));
+                let _languages = tr.insertCell();
+                _languages.appendChild(document.createTextNode(Object.values(item.languages)));
+                let _area = tr.insertCell();
+                _area.appendChild(document.createTextNode(item.area));
+                let _flag = tr.insertCell();
+                let _imgFlag = document.createElement('img');
+                _imgFlag.setAttribute('src', item.flagURL);
+                _flag.appendChild(_imgFlag);
+            });
+
+            upArrowAreaSpan.style.display = 'none';
+            downArrowAreaSpan.style.display = 'contents';
+        })
+        downArrowAreaSpan.addEventListener('click', function() {
+            removeTableBody();
+
+            let tBody = document.createElement('tbody');
+            table.appendChild(tBody);
+
+            _filteredCountryList.sort(compareCountriesArea).forEach(function (item) {
+                let tr = tBody.insertRow();
+                let _countryName = tr.insertCell();
+                _countryName.appendChild(document.createTextNode(item.name));
+                let _capitalName = tr.insertCell();
+                _capitalName.appendChild(document.createTextNode(item.capital));
+                let _regionName = tr.insertCell();
+                _regionName.appendChild(document.createTextNode(item.region));
+                let _languages = tr.insertCell();
+                _languages.appendChild(document.createTextNode(Object.values(item.languages)));
+                let _area = tr.insertCell();
+                _area.appendChild(document.createTextNode(item.area));
+                let _flag = tr.insertCell();
+                let _imgFlag = document.createElement('img');
+                _imgFlag.setAttribute('src', item.flagURL);
+                _flag.appendChild(_imgFlag);
+            });
+
+            downArrowAreaSpan.style.display = 'none';
+            upArrowAreaSpan.style.display = 'contents';
+        })
     })
 
     regionCounter++;
