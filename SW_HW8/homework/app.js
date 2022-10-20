@@ -60,8 +60,6 @@ let defaultSelectOption = document.createElement('option');
 defaultSelectOption.textContent = 'Select value';
 selectList.appendChild(defaultSelectOption);
 
-let regionCounter = 0;
-let languageCounter = 0;
 let clickCounter = 0;
 let selectListClickCounter = 0;
 let clickedByRegionButton = false;
@@ -79,6 +77,7 @@ function addRegionVars() {
     })
     return _regionsVars
 }
+const regionArray = addRegionVars();
 
 function addLanguageVars() {
     const _languageVars = [];
@@ -87,6 +86,7 @@ function addLanguageVars() {
     })
     return _languageVars
 }
+const languageArray = addLanguageVars();
 
 function addNoItemsLabel() {
     let noItemsParagraph = document.createElement('p');
@@ -96,62 +96,68 @@ function addNoItemsLabel() {
 
     return clickCounter++
 }
-
 function removeNoItemsLabel() {
     let noItemsParagraph = document.querySelector('#noItemsParagraph');
     appRoot.removeChild(noItemsParagraph);
 }
-
 function removeTable() {
     let divTable = document.querySelector('.table');
     appRoot.removeChild(divTable);
 }
 
 regionInput.addEventListener('click', function(){
-    clickedByRegionButton = true;
-    clickedByLanguageButton = false;
+    if (clickedByRegionButton === false && clickedByLanguageButton === true) {
+        externalService.getLanguagesList().forEach(function (item, index) {
+            selectList.removeChild(languageArray[index]);
+        })
+    }
 
-    if (clickCounter < 1) addNoItemsLabel();
+    if (clickCounter < 1) {
+ addNoItemsLabel(); 
+}
     selectList.removeAttribute('disabled');
-    const regionArray = addRegionVars();
 
-    if (regionCounter < 1) {
         externalService.getRegionsList().forEach(function (item, index) {
             regionArray[index] = document.createElement('option');
             regionArray[index].setAttribute('value', item);
             regionArray[index].textContent = item;
             selectList.appendChild(regionArray[index]);
         })
+
+    clickedByRegionButton = true;
+    clickedByLanguageButton = false;
+})
+languageInput.addEventListener('click', function() {
+    if (clickedByRegionButton === true && clickedByLanguageButton === false) {
+        externalService.getRegionsList().forEach(function (item, index) {
+            selectList.removeChild(regionArray[index]);
+        })
     }
 
-    regionCounter++;
-})
-
-languageInput.addEventListener('click', function() {
-    clickedByRegionButton = false;
-    clickedByLanguageButton = true;
-
-    if (clickCounter < 1) addNoItemsLabel();
+    if (clickCounter < 1) {
+ addNoItemsLabel(); 
+}
     selectList.removeAttribute('disabled');
-    const languageArray = addLanguageVars();
 
-    if (languageCounter < 1) {
         externalService.getLanguagesList().forEach(function (item, index) {
             languageArray[index] = document.createElement('option');
             languageArray[index].textContent = item;
             selectList.appendChild(languageArray[index]);
         });
-    }
 
-    languageCounter++;
+    clickedByRegionButton = false;
+    clickedByLanguageButton = true;
 })
-
 selectList.addEventListener('change', function() {
     let selectedValue = selectList.value;
     selectListClickCounter++;
 
-    if (selectListClickCounter < 2) removeNoItemsLabel(); //removing 'No items' paragraph
-    if (selectListClickCounter > 1) removeTable(); //removing previous table
+    if (selectListClickCounter < 2) {
+ removeNoItemsLabel(); 
+}
+    if (selectListClickCounter > 1) {
+ removeTable(); 
+}
 
     function createTableHeaders() {
         let divTable = document.createElement('div');
@@ -236,12 +242,20 @@ selectList.addEventListener('change', function() {
         newTable.removeChild(tableBody);
     }
     function compareCountries(a,b) {
-        if (a.name > b.name) return 1;
-        if (a.name < b.name) return -1;
+        if (a.name > b.name) {
+ return 1; 
+}
+        if (a.name < b.name) {
+ return -1; 
+}
     }
     function compareCountriesArea(a,b) {
-        if (a.area > b.area) return 1;
-        if (a.area < b.area) return -1;
+        if (a.area > b.area) {
+ return 1; 
+}
+        if (a.area < b.area) {
+ return -1; 
+}
     }
     function addArrowEventListeners() {
         let _filteredCountryList = [];
