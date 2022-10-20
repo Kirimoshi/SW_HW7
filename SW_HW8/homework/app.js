@@ -50,6 +50,7 @@ searchQueryLabel.textContent = 'Please choose search query:';
 
 let selectList = document.createElement('select');
 selectList.setAttribute('id', 'searchQueryList');
+selectList.setAttribute('disabled', 'disabled');
 
 appRoot.appendChild(searchQueryDiv);
 searchQueryDiv.appendChild(searchQueryLabel);
@@ -59,9 +60,19 @@ let defaultSelectOption = document.createElement('option');
 defaultSelectOption.textContent = 'Select value';
 selectList.appendChild(defaultSelectOption);
 
-//adding event listener to click on ByRegion radiobutton
 let regionCounter = 0;
 let languageCounter = 0;
+let clickCounter = 0;
+let selectListClickCounter = 0;
+let clickedByRegionButton = false;
+let clickedByLanguageButton = false;
+let upArrowCountrySpan;
+let downArrowCountrySpan;
+let doubleArrowAreaSpan;
+let upArrowAreaSpan;
+let downArrowAreaSpan;
+
+
 
 function addRegionVars() {
     const _regionsVars = [];
@@ -79,9 +90,6 @@ function addLanguageVars() {
     return _languageVars
 }
 
-selectList.setAttribute('disabled', 'disabled');
-
-let clickCounter = 0;
 function addNoItemsLabel() {
     let noItemsParagraph = document.createElement('p');
     noItemsParagraph.setAttribute('id', 'noItemsParagraph')
@@ -101,12 +109,9 @@ function removeTable() {
     appRoot.removeChild(divTable);
 }
 
-let selectListClickCounter = 0;
-
 regionInput.addEventListener('click', function(){
-//    externalService.getLanguagesList().forEach(function(item, index) {
-//        selectList.removeChild(addLanguageVars()[index]);
-//    })
+    clickedByRegionButton = true;
+
     if (clickCounter < 1) addNoItemsLabel();
     selectList.removeAttribute('disabled');
     const regionArray = addRegionVars();
@@ -127,27 +132,28 @@ regionInput.addEventListener('click', function(){
         if (selectListClickCounter < 2) removeNoItemsLabel(); //removing 'No items' paragraph
         if (selectListClickCounter > 1) removeTable(); //removing previous table
 
-        //creating a table
-        let divTable = document.createElement('div');
-        divTable.setAttribute('class', 'table');
-        appRoot.appendChild(divTable);
-        let table = document.createElement('table');
-        divTable.appendChild(table);
-        let tHead = document.createElement('thead');
-        table.appendChild(tHead);
-        let tRowHead = document.createElement('tr');
-        tHead.appendChild(tRowHead);
-        let headerNamesArray = ['Country name', 'Capital', 'World region', 'Languages', 'Area', 'Flag'];
+        //creating an initial table headers
+        function createTableHeaders() {
+            let divTable = document.createElement('div');
+            divTable.setAttribute('class', 'table');
+            appRoot.appendChild(divTable);
+            let table = document.createElement('table');
+            divTable.appendChild(table);
+            let tHead = document.createElement('thead');
+            table.appendChild(tHead);
+            let tRowHead = document.createElement('tr');
+            tHead.appendChild(tRowHead);
+            let headerNamesArray = ['Country name', 'Capital', 'World region', 'Languages', 'Area', 'Flag'];
 
             let countryNameTh = document.createElement('th');
             countryNameTh.textContent = headerNamesArray[0];
-                let upArrowCountrySpan = document.createElement('span');
-                countryNameTh.appendChild(upArrowCountrySpan);
-                upArrowCountrySpan.textContent = `\u{02191}`;
-                 let downArrowCountrySpan = document.createElement('span');
-                 countryNameTh.appendChild(downArrowCountrySpan);
-                 downArrowCountrySpan.textContent = `\u{02193}`;
-                 downArrowCountrySpan.style.display = 'none';
+            upArrowCountrySpan = document.createElement('span');
+            countryNameTh.appendChild(upArrowCountrySpan);
+            upArrowCountrySpan.textContent = `\u{02191}`;
+            downArrowCountrySpan = document.createElement('span');
+            countryNameTh.appendChild(downArrowCountrySpan);
+            downArrowCountrySpan.textContent = `\u{02193}`;
+            downArrowCountrySpan.style.display = 'none';
 
             let capitalNameTh = document.createElement('th');
             capitalNameTh.textContent = headerNamesArray[1];
@@ -160,17 +166,17 @@ regionInput.addEventListener('click', function(){
 
             let areaTh = document.createElement('th');
             areaTh.textContent = headerNamesArray[4];
-                let doubleArrowAreaSpan = document.createElement('span');
-                areaTh.appendChild(doubleArrowAreaSpan);
-                doubleArrowAreaSpan.textContent = `\u{02195}`;
-                let upArrowAreaSpan = document.createElement('span');
-                areaTh.appendChild(upArrowAreaSpan);
-                upArrowAreaSpan.textContent = `\u{02191}`;
-                let downArrowAreaSpan = document.createElement('span');
-                areaTh.appendChild(downArrowAreaSpan);
-                downArrowAreaSpan.textContent = `\u{02193}`;
-                upArrowAreaSpan.style.display = 'none';
-                downArrowAreaSpan.style.display = 'none';
+            doubleArrowAreaSpan = document.createElement('span');
+            areaTh.appendChild(doubleArrowAreaSpan);
+            doubleArrowAreaSpan.textContent = `\u{02195}`;
+            upArrowAreaSpan = document.createElement('span');
+            areaTh.appendChild(upArrowAreaSpan);
+            upArrowAreaSpan.textContent = `\u{02191}`;
+            downArrowAreaSpan = document.createElement('span');
+            areaTh.appendChild(downArrowAreaSpan);
+            downArrowAreaSpan.textContent = `\u{02193}`;
+            upArrowAreaSpan.style.display = 'none';
+            downArrowAreaSpan.style.display = 'none';
 
             let flagNameTh = document.createElement('th');
             flagNameTh.textContent = headerNamesArray[5];
@@ -182,12 +188,17 @@ regionInput.addEventListener('click', function(){
             tRowHead.appendChild(areaTh);
             tRowHead.appendChild(flagNameTh);
 
-
-        let tBody = document.createElement('tbody');
-        table.appendChild(tBody);
-
-        function createTable(countryObj) {
-            let tr = tBody.insertRow();
+            return table
+        }
+        let newTable = createTableHeaders();
+        function createTableBody() {
+            let tBody = document.createElement('tbody');
+            newTable.appendChild(tBody);
+            return tBody
+        }
+        let newTableBody = createTableBody();
+        function createTableRows(countryObj) {
+            let tr = newTableBody.insertRow();
             let _countryName = tr.insertCell();
             _countryName.appendChild(document.createTextNode(countryObj.name));
             let _capitalName = tr.insertCell();
@@ -203,156 +214,62 @@ regionInput.addEventListener('click', function(){
             _imgFlag.setAttribute('src', countryObj.flagURL);
             _flag.appendChild(_imgFlag);
         }
-
         function removeTableBody() {
             let tableBody = document.querySelector('tbody');
-            table.removeChild(tableBody);
+            newTable.removeChild(tableBody);
         }
-
-        let _filteredCountryList = externalService.getCountryListByRegion(selectedValue);
-        _filteredCountryList.forEach(createTable);
-
         function compareCountries(a,b) {
             if (a.name > b.name) return 1;
             if (a.name < b.name) return -1;
         }
-
         function compareCountriesArea(a,b) {
             if (a.area > b.area) return 1;
             if (a.area < b.area) return -1;
         }
 
+        let _filteredCountryList = externalService.getCountryListByRegion(selectedValue);
+        _filteredCountryList.forEach(createTableRows);
+
         upArrowCountrySpan.addEventListener('click', function() {
             removeTableBody();
-
-            let tBody = document.createElement('tbody');
-            table.appendChild(tBody);
-
-            _filteredCountryList.sort(compareCountries).reverse().forEach(function (item) {
-                let tr = tBody.insertRow();
-                let _countryName = tr.insertCell();
-                _countryName.appendChild(document.createTextNode(item.name));
-                let _capitalName = tr.insertCell();
-                _capitalName.appendChild(document.createTextNode(item.capital));
-                let _regionName = tr.insertCell();
-                _regionName.appendChild(document.createTextNode(item.region));
-                let _languages = tr.insertCell();
-                _languages.appendChild(document.createTextNode(Object.values(item.languages)));
-                let _area = tr.insertCell();
-                _area.appendChild(document.createTextNode(item.area));
-                let _flag = tr.insertCell();
-                let _imgFlag = document.createElement('img');
-                _imgFlag.setAttribute('src', item.flagURL);
-                _flag.appendChild(_imgFlag);
-            });
+            newTableBody = createTableBody();
+            _filteredCountryList.sort(compareCountries).reverse().forEach(createTableRows);
 
             upArrowCountrySpan.style.display = 'none';
             downArrowCountrySpan.style.display = 'contents';
         })
         downArrowCountrySpan.addEventListener('click', function() {
             removeTableBody();
+            newTableBody = createTableBody();
 
-            let tBody = document.createElement('tbody');
-            table.appendChild(tBody);
-
-            _filteredCountryList.sort(compareCountries).forEach(function (item) {
-                let tr = tBody.insertRow();
-                let _countryName = tr.insertCell();
-                _countryName.appendChild(document.createTextNode(item.name));
-                let _capitalName = tr.insertCell();
-                _capitalName.appendChild(document.createTextNode(item.capital));
-                let _regionName = tr.insertCell();
-                _regionName.appendChild(document.createTextNode(item.region));
-                let _languages = tr.insertCell();
-                _languages.appendChild(document.createTextNode(Object.values(item.languages)));
-                let _area = tr.insertCell();
-                _area.appendChild(document.createTextNode(item.area));
-                let _flag = tr.insertCell();
-                let _imgFlag = document.createElement('img');
-                _imgFlag.setAttribute('src', item.flagURL);
-                _flag.appendChild(_imgFlag);
-            });
+            _filteredCountryList.sort(compareCountries).forEach(createTableRows);
 
             downArrowCountrySpan.style.display = 'none';
             upArrowCountrySpan.style.display = 'contents';
         })
         doubleArrowAreaSpan.addEventListener('click', function() {
             removeTableBody();
+            newTableBody = createTableBody();
 
-            let tBody = document.createElement('tbody');
-            table.appendChild(tBody);
-
-            _filteredCountryList.sort(compareCountriesArea).forEach(function (item) {
-                let tr = tBody.insertRow();
-                let _countryName = tr.insertCell();
-                _countryName.appendChild(document.createTextNode(item.name));
-                let _capitalName = tr.insertCell();
-                _capitalName.appendChild(document.createTextNode(item.capital));
-                let _regionName = tr.insertCell();
-                _regionName.appendChild(document.createTextNode(item.region));
-                let _languages = tr.insertCell();
-                _languages.appendChild(document.createTextNode(Object.values(item.languages)));
-                let _area = tr.insertCell();
-                _area.appendChild(document.createTextNode(item.area));
-                let _flag = tr.insertCell();
-                let _imgFlag = document.createElement('img');
-                _imgFlag.setAttribute('src', item.flagURL);
-                _flag.appendChild(_imgFlag);
-            });
+            _filteredCountryList.sort(compareCountriesArea).forEach(createTableRows);
 
             doubleArrowAreaSpan.style.display = 'none';
             upArrowAreaSpan.style.display = 'contents';
         })
         upArrowAreaSpan.addEventListener('click', function() {
             removeTableBody();
+            newTableBody = createTableBody();
 
-            let tBody = document.createElement('tbody');
-            table.appendChild(tBody);
-
-            _filteredCountryList.sort(compareCountriesArea).reverse().forEach(function (item) {
-                let tr = tBody.insertRow();
-                let _countryName = tr.insertCell();
-                _countryName.appendChild(document.createTextNode(item.name));
-                let _capitalName = tr.insertCell();
-                _capitalName.appendChild(document.createTextNode(item.capital));
-                let _regionName = tr.insertCell();
-                _regionName.appendChild(document.createTextNode(item.region));
-                let _languages = tr.insertCell();
-                _languages.appendChild(document.createTextNode(Object.values(item.languages)));
-                let _area = tr.insertCell();
-                _area.appendChild(document.createTextNode(item.area));
-                let _flag = tr.insertCell();
-                let _imgFlag = document.createElement('img');
-                _imgFlag.setAttribute('src', item.flagURL);
-                _flag.appendChild(_imgFlag);
-            });
+            _filteredCountryList.sort(compareCountriesArea).reverse().forEach(createTableRows);
 
             upArrowAreaSpan.style.display = 'none';
             downArrowAreaSpan.style.display = 'contents';
         })
         downArrowAreaSpan.addEventListener('click', function() {
             removeTableBody();
+            newTableBody = createTableBody();
 
-            let tBody = document.createElement('tbody');
-            table.appendChild(tBody);
-
-            _filteredCountryList.sort(compareCountriesArea).forEach(function (item) {
-                let tr = tBody.insertRow();
-                let _countryName = tr.insertCell();
-                _countryName.appendChild(document.createTextNode(item.name));
-                let _capitalName = tr.insertCell();
-                _capitalName.appendChild(document.createTextNode(item.capital));
-                let _regionName = tr.insertCell();
-                _regionName.appendChild(document.createTextNode(item.region));
-                let _languages = tr.insertCell();
-                _languages.appendChild(document.createTextNode(Object.values(item.languages)));
-                let _area = tr.insertCell();
-                _area.appendChild(document.createTextNode(item.area));
-                let _flag = tr.insertCell();
-                let _imgFlag = document.createElement('img');
-                _imgFlag.setAttribute('src', item.flagURL);
-                _flag.appendChild(_imgFlag);
-            });
+            _filteredCountryList.sort(compareCountriesArea).forEach(createTableRows);
 
             downArrowAreaSpan.style.display = 'none';
             upArrowAreaSpan.style.display = 'contents';
