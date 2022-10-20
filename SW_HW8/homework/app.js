@@ -104,7 +104,6 @@ function removeTable() {
     let divTable = document.querySelector('.table');
     appRoot.removeChild(divTable);
 }
-
 regionInput.addEventListener('click', function(){
     if (clickedByRegionButton === false && clickedByLanguageButton === true) {
         externalService.getLanguagesList().forEach(function (item, index) {
