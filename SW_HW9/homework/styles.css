@@ -1,0 +1,29 @@
+/* START: Task 1 Styles */
+#task1 {
+    min-width: content-box;
+    min-height: content-box;
+}
+
+table {
+    width: 300px;
+    height: 300px;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+table, tr, td {
+    border: 1px solid black;
+}
+/* END: Task 1 Styles */
+
+/* START: Task 2 Styles */
+
+/* END: Task 2 Styles */
+
+/* START: Task 3 Styles */
+
+/* END: Task 3 Styles */
