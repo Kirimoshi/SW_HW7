@@ -10,6 +10,7 @@
 <body>
   <div id="task1">
     <table>
+      <caption>Task 1</caption>
       <tr>
         <td id="11" class="firstColumnCell">Cell</td>
         <td id="12" class="usualCell">Cell</td>
@@ -28,15 +29,41 @@
     </table>
 
   </div>
-
+  <br>
   <div id="task2">
-
-
+    <div class="wrapper">
+      <div style="text-align: center">Task 2</div>
+      <div id="notificationField">
+        <div id="notificationFieldContent">
+        </div>
+      </div>
+      <br>
+      <label for="tel"></label>
+      <input type="tel" id="tel" name="tel" placeholder="Type phone number in format +380*********" size="34">
+      <input type="submit" id="sendButton" value="Send" disabled>
+    </div>
   </div>
-
+  <br>
   <div id="task3">
-    <!-- TEMPLATE FOR TASK 3 GOES HERE -->
-
+    <div class="wrapper3">
+      <div style="text-align: center">Task 3</div>
+      <div id="basketballCourt">
+        <img class="b-court" src="./assets/court.png" alt="Basketball court">
+        <img class="b-ball" src="./assets/ball.png" alt="Basketball ball">
+        <div class="scoringZoneA"></div>
+        <div class="scoringZoneB"></div>
+      </div>
+      <div class="scoreboard">
+        <div class="scoreboardTeamA">
+          Team A: 0
+        </div>
+        <div class="scoreboardTeamB">
+          Team B: 0
+        </div>
+      </div>
+      <br>
+      <div class="last-div"></div>
+    </div>
   </div>
 
   <script src="./index.js"></script>

@@ -1,7 +1,7 @@
 /* START: Task 1 Styles */
 #task1 {
-    min-width: content-box;
-    min-height: content-box;
+    display: flex;
+    justify-content: center;
 }
 
 table {
@@ -21,9 +21,80 @@ table, tr, td {
 /* END: Task 1 Styles */
 
 /* START: Task 2 Styles */
+#task2 {
+    display: flex;
+    justify-content: center;
+}
 
+#notificationField {
+    width: 300px;
+    height: 80px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid white;
+}
+#tel {
+    border: 2px solid black;
+}
 /* END: Task 2 Styles */
 
 /* START: Task 3 Styles */
+body {
+    position: relative;
+}
 
+#task3 {
+    display: flex;
+    justify-content: center;
+}
+
+.b-court {
+    position: absolute;
+    left: 450px;
+    width: 600px;
+    height: 330px;
+}
+
+.b-ball {
+    position: absolute;
+    top: 680px;
+    left: 732px;
+    width: 40px;
+    height: 40px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scoringZoneA, .scoringZoneB {
+    width: 15px;
+    height: 15px;
+}
+
+.scoringZoneA {
+    position: absolute;
+    top: 694px;
+    left: 482px;
+}
+
+.scoringZoneB {
+    position: absolute;
+    top: 694px;
+    left: 1004px;
+}
+
+.scoreboardTeamA {
+    position: absolute;
+    top: 870px;
+    left: 460px;
+}
+
+.scoreboardTeamB {
+    position: absolute;
+    top: 870px;
+    left: 980px;
+}
 /* END: Task 3 Styles */
