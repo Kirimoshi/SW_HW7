@@ -13,13 +13,13 @@ body {
     border-bottom-right-radius: 40%; }
     body .header-wrap div, body .header-wrap > p {
       margin-left: 12rem; }
-    body .header-wrap .landing-logo, body .header-wrap .footer-wrap .footer_logo, body .footer-wrap .header-wrap .footer_logo {
+    body .header-wrap .landing-logo {
       display: flex;
       justify-content: left;
       column-gap: 1rem; }
-      body .header-wrap .landing-logo img, body .header-wrap .footer-wrap .footer_logo img, body .footer-wrap .header-wrap .footer_logo img {
+      body .header-wrap .landing-logo img {
         margin-top: 1rem; }
-      body .header-wrap .landing-logo p, body .header-wrap .footer-wrap .footer_logo p, body .footer-wrap .header-wrap .footer_logo p {
+      body .header-wrap .landing-logo p {
         margin-top: 0.8rem;
         margin-bottom: 0;
         font-size: 1.5rem;
@@ -28,7 +28,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center; }
-        body .header-wrap .landing-logo p span, body .header-wrap .footer-wrap .footer_logo p span, body .footer-wrap .header-wrap .footer_logo p span {
+        body .header-wrap .landing-logo p span {
           font-size: 0.65rem;
           font-weight: 600;
           text-align: center; }
@@ -39,11 +39,32 @@ body {
       margin-top: 4rem;
       margin-bottom: 3.2rem;
       line-height: 1; }
+      body .header-wrap .header_heading .header_heading_span {
+        position: relative; }
+        body .header-wrap .header_heading .header_heading_span::after {
+          content: attr(data-word);
+          position: absolute;
+          top: 0.55rem;
+          left: 0;
+          background-color: #14a0c7; }
     body .header-wrap .header_text {
       margin-top: 0;
       width: 38rem;
       line-height: 1.5;
       letter-spacing: 0.3px; }
+    body .header-wrap .header-button-wrap {
+      width: 38rem; }
+      body .header-wrap .header-button-wrap .header_button {
+        color: white;
+        background-color: #62911a;
+        border: none;
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 0.2rem; }
+      body .header-wrap .header-button-wrap .login {
+        color: white;
+        font-size: 1.3rem; }
   body .section {
     display: flex;
     flex-direction: column;
@@ -51,6 +72,15 @@ body {
     body .section .section_text {
       font-size: 2.5rem;
       font-weight: 600; }
+      body .section .section_text .section-text-span {
+        position: relative; }
+        body .section .section_text .section-text-span::after {
+          content: attr(data-word);
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin-bottom: 1rem;
+          background-color: #14a0c7; }
     body .section div.section_card_wrap {
       width: 70rem;
       display: flex;
@@ -87,12 +117,54 @@ body {
       margin-top: 8rem;
       border-radius: 0.4rem;
       display: flex;
-      justify-content: space-around; }
+      justify-content: space-around;
+      align-items: center; }
+      body .section div.section_banner .section_banner_heading {
+        font-size: 2rem;
+        font-weight: bold; }
+        body .section div.section_banner .section_banner_heading .section-banner-heading-span {
+          position: relative; }
+          body .section div.section_banner .section_banner_heading .section-banner-heading-span::after {
+            content: attr(data-word);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #14a0c7; }
+      body .section div.section_banner .section_banner_text {
+        color: #b1b6b5;
+        font-weight: 600; }
+      body .section div.section_banner .section_banner_button {
+        color: white;
+        background-color: #62911a;
+        border: none;
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 0.2rem; }
   body .footer-wrap {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #21232e;
     color: #b1b6b5; }
+    body .footer-wrap .footer_logo {
+      display: flex;
+      justify-content: left;
+      column-gap: 1rem; }
+      body .footer-wrap .footer_logo img {
+        margin-top: 1rem; }
+      body .footer-wrap .footer_logo p {
+        margin-top: 0.8rem;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        width: 4.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+        body .footer-wrap .footer_logo p span {
+          font-size: 0.65rem;
+          font-weight: 600;
+          text-align: center; }
     body .footer-wrap .footer_text {
       width: 20rem; }
