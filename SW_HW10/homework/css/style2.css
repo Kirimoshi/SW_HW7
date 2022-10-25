@@ -53,7 +53,11 @@ body {
       line-height: 1.5;
       letter-spacing: 0.3px; }
     body .header-wrap .header-button-wrap {
-      width: 38rem; }
+      width: 31rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4rem; }
       body .header-wrap .header-button-wrap .header_button {
         color: white;
         background-color: #62911a;
@@ -66,6 +70,7 @@ body {
         color: white;
         font-size: 1.3rem; }
   body .section {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center; }
@@ -112,25 +117,31 @@ body {
           color: #b1b6b5;
           line-height: 1.5; }
     body .section div.section_banner {
+      position: absolute;
+      top: 84.5rem;
+      left: 21rem;
       background: linear-gradient(to right, #62911a, #2f5dd0);
       width: 78rem;
-      margin-top: 8rem;
       border-radius: 0.4rem;
       display: flex;
       justify-content: space-around;
       align-items: center; }
       body .section div.section_banner .section_banner_heading {
         font-size: 2rem;
-        font-weight: bold; }
+        font-weight: bold;
+        margin-bottom: 0.2rem; }
         body .section div.section_banner .section_banner_heading .section-banner-heading-span {
           position: relative; }
           body .section div.section_banner .section_banner_heading .section-banner-heading-span::after {
             content: attr(data-word);
             position: absolute;
-            top: 0;
+            bottom: 0.05rem;
             left: 0;
+            padding-top: 1rem;
             background-color: #14a0c7; }
       body .section div.section_banner .section_banner_text {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
         color: #b1b6b5;
         font-weight: 600; }
       body .section div.section_banner .section_banner_button {
@@ -145,6 +156,9 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 15rem;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
     background-color: #21232e;
     color: #b1b6b5; }
     body .footer-wrap .footer_logo {
@@ -167,4 +181,4 @@ body {
           font-weight: 600;
           text-align: center; }
     body .footer-wrap .footer_text {
-      width: 20rem; }
+      width: 21rem; }

@@ -65,7 +65,7 @@ body {
             position: absolute;
             top: 0.55rem;
             left: 0;
-            background-color: $textSelectionBackColor;
+            background-color: $TextSelectionBackColor;
           }
         }
       }
@@ -76,7 +76,11 @@ body {
         letter-spacing: 0.3px;
       }
       .header-button-wrap {
-        width: 38rem;
+        width: 31rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 4rem;
         .header_button {
           @include button;
         }
@@ -87,6 +91,7 @@ body {
       }
   }
   .section {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,7 +106,7 @@ body {
             top: 0;
             left: 0;
             margin-bottom: 1rem;
-            background-color: $textSelectionBackColor;
+            background-color: $TextSelectionBackColor;
           }
         }
       }
@@ -142,9 +147,11 @@ body {
           }
       }
       div.section_banner {
+        position: absolute;
+        top: 84.5rem;
+        left: 21rem;
         background: linear-gradient(to right, $sectionBannerGradientColor1, $sectionBannerGradientColor2);
         width: 78rem;
-        margin-top: 8rem;
         border-radius: $sectionCardBorderRadius;
         display: flex;
         justify-content: space-around;
@@ -152,18 +159,22 @@ body {
           .section_banner_heading {
             font-size: 2rem;
             font-weight: bold;
+            margin-bottom: 0.2rem;
             .section-banner-heading-span {
               position: relative;
               &::after {
                 content: attr(data-word);
                 position: absolute;
-                top: 0;
+                bottom: 0.05rem;
                 left: 0;
-                background-color: $textSelectionBackColor;
+                padding-top: 1rem;
+                background-color: $TextSelectionBackColor;
               }
             }
           }
           .section_banner_text {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
             color: $sectionCardTextColor;
             font-weight: 600;
           }
@@ -176,13 +187,16 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 15rem;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
     background-color: $sectionCardBackColor;
     color: $sectionCardTextColor;
       .footer_logo {
         @include logo;
       }
       .footer_text {
-        width: 20rem;
+        width: 21rem;
       }
   }
 }
