@@ -1,15 +1,15 @@
 $bodyWidth: 1920px;
 $bodyFontSize: 16px;
+$colorMap: (bodyBackgroundColor: #ffffff, headerFontColor: #2c2f3c, TextSelectionBackColor: #14a0c7,
+        sectionCardHeadingColor: #ffffff, sectionCardBackColor: #21232e, sectionCardTextColor: #b1b6b5,
+        sectionBannerGradientColor1: #62911a, sectionBannerGradientColor2: #2f5dd0
+);
+$fontFamily: 'Source Sans Pro', sans-serif;
+$fontFamilyAdditional: 'Source Sans Pro', sans-serif;
 $headerBackBorderRadius: 40%;
 $headerHeight: 700px;
-$headerFontColor: #2c2f3c;
 $headerMarginLeft: 12rem;
-$TextSelectionBackColor: #14a0c7;
 $headerButtonBorderRadius: 0.2rem;
-$sectionCardHeadingColor: white;
-$sectionCardBackColor: #21232e;
+$headerBackgroundImage: '../img/m-h-day.jpg';
 $sectionCardBorderRadius: 0.4rem;
 $sectionCardImgBorderRadius: 0.4rem;
-$sectionCardTextColor: #b1b6b5;
-$sectionBannerGradientColor1: #62911a;
-$sectionBannerGradientColor2: #2f5dd0;

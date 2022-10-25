@@ -1,11 +1,13 @@
 @import '_variables1';
+@import '_variables2';
 @mixin logo{display: flex;
   justify-content: left;
-  column-gap: 1rem;
+  column-gap: 0.3rem;
   img {
     margin-top: 1rem;
   }
   p {
+    font-family: $fontFamilyAdditional;
     margin-top: 0.8rem;
     margin-bottom: 0;
     font-size: 1.5rem;
@@ -14,6 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     span {
       font-size: 0.65rem;
       font-weight: 600;
@@ -22,24 +25,29 @@
   }
 };
 @mixin button{
-  color: $sectionCardHeadingColor;
-  background-color: $sectionBannerGradientColor1;
+  color: map-get($colorMap, sectionCardHeadingColor);
+  background-color: map-get($colorMap, sectionBannerGradientColor1);
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: $headerButtonBorderRadius;
 }
+@mixin link{
+  color: map-get($colorMap, sectionCardHeadingColor);
+  font-size: 1.3rem;
+}
 
 body {
+  background-color: map-get($colorMap, bodyBackgroundColor);
   width: $bodyWidth;
   margin: 0 auto;
   font-size: $bodyFontSize;
-  color: $headerFontColor;
-  font-family: 'Source Sans Pro', sans-serif;
+  color: map-get($colorMap, headerFontColor);
+  font-family: $fontFamily;
 
   .header-wrap {
-    background-image: url('../img/m-h-day.jpg');
+    background-image: url($headerBackgroundImage);
     background-size: cover;
     background-position: center;
     height: $headerHeight;
@@ -65,11 +73,12 @@ body {
             position: absolute;
             top: 0.55rem;
             left: 0;
-            background-color: $TextSelectionBackColor;
+            background-color: map-get($colorMap, TextSelectionBackColor);
           }
         }
       }
       .header_text {
+        font-family: $fontFamilyAdditional;
         margin-top: 0;
         width: 38rem;
         line-height: 1.5;
@@ -85,8 +94,7 @@ body {
           @include button;
         }
         .login {
-          color: $sectionCardHeadingColor;
-          font-size: 1.3rem;
+          @include link;
         }
       }
   }
@@ -106,7 +114,7 @@ body {
             top: 0;
             left: 0;
             margin-bottom: 1rem;
-            background-color: $TextSelectionBackColor;
+            background-color: map-get($colorMap, TextSelectionBackColor);
           }
         }
       }
@@ -116,7 +124,7 @@ body {
         flex-direction: column;
         align-items: center;
         row-gap: 2rem;
-        color: $sectionCardHeadingColor;
+        color: map-get($colorMap, sectionCardHeadingColor);
           .section_card {
             display: flex;
             justify-content: flex-start;
@@ -139,18 +147,23 @@ body {
                   font-size: 1.5rem;
                   font-weight: 600;
                 }
-                .section_card_text, .section_link {
-                  color: $sectionCardTextColor;
+                .section_link {
+                  color: map-get($colorMap, sectionCardTextColor);
                   line-height: 1.5;
                 }
-            background-color: $sectionCardBackColor;
+                .section_card_text {
+                  @extend .section_link;
+                  font-family: $fontFamilyAdditional;
+                }
+            background-color: map-get($colorMap, sectionCardBackColor);
           }
       }
       div.section_banner {
         position: absolute;
         top: 84.5rem;
         left: 21rem;
-        background: linear-gradient(to right, $sectionBannerGradientColor1, $sectionBannerGradientColor2);
+        background: linear-gradient(to right, map-get($colorMap, sectionBannerGradientColor1),
+                map-get($colorMap, sectionBannerGradientColor2));
         width: 78rem;
         border-radius: $sectionCardBorderRadius;
         display: flex;
@@ -168,15 +181,16 @@ body {
                 bottom: 0.05rem;
                 left: 0;
                 padding-top: 1rem;
-                background-color: $TextSelectionBackColor;
+                background-color: map-get($colorMap, TextSelectionBackColor);
               }
             }
           }
           .section_banner_text {
+            font-family: $fontFamilyAdditional;
             margin-top: 1rem;
             margin-bottom: 2rem;
-            color: $sectionCardTextColor;
-            font-weight: 600;
+            color: map-get($colorMap, sectionCardTextColor);
+            font-weight: 500;
           }
         .section_banner_button {
           @include button;
@@ -184,14 +198,15 @@ body {
       }
   }
   .footer-wrap {
+    font-family: $fontFamilyAdditional;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 15rem;
     padding-top: 7rem;
     padding-bottom: 3rem;
-    background-color: $sectionCardBackColor;
-    color: $sectionCardTextColor;
+    background-color: map-get($colorMap, sectionCardBackColor);
+    color: map-get($colorMap, sectionCardTextColor);
       .footer_logo {
         @include logo;
       }

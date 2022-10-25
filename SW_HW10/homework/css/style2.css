@@ -1,11 +1,12 @@
 body {
+  background-color: #21232e;
   width: 1920px;
   margin: 0 auto;
   font-size: 16px;
-  color: #2c2f3c;
-  font-family: 'Source Sans Pro', sans-serif; }
+  color: #ffffff;
+  font-family: "Source Sans Pro", sans-serif; }
   body .header-wrap {
-    background-image: url("../img/m-h-day.jpg");
+    background-image: url("../img/m-h-night.jpg");
     background-size: cover;
     background-position: center;
     height: 700px;
@@ -16,10 +17,11 @@ body {
     body .header-wrap .landing-logo {
       display: flex;
       justify-content: left;
-      column-gap: 1rem; }
+      column-gap: 0.3rem; }
       body .header-wrap .landing-logo img {
         margin-top: 1rem; }
       body .header-wrap .landing-logo p {
+        font-family: "Fresca", sans-serif;
         margin-top: 0.8rem;
         margin-bottom: 0;
         font-size: 1.5rem;
@@ -27,7 +29,8 @@ body {
         width: 4.5rem;
         display: flex;
         flex-direction: column;
-        justify-content: center; }
+        justify-content: center;
+        align-items: center; }
         body .header-wrap .landing-logo p span {
           font-size: 0.65rem;
           font-weight: 600;
@@ -46,8 +49,9 @@ body {
           position: absolute;
           top: 0.55rem;
           left: 0;
-          background-color: #14a0c7; }
+          background-color: #ff4e33; }
     body .header-wrap .header_text {
+      font-family: "Fresca", sans-serif;
       margin-top: 0;
       width: 38rem;
       line-height: 1.5;
@@ -59,15 +63,15 @@ body {
       align-items: center;
       margin-top: 4rem; }
       body .header-wrap .header-button-wrap .header_button {
-        color: white;
-        background-color: #62911a;
+        color: #ffffff;
+        background-color: #e3ac00;
         border: none;
         padding: 1rem 2.5rem;
         font-size: 1rem;
         font-weight: 600;
         border-radius: 0.2rem; }
       body .header-wrap .header-button-wrap .login {
-        color: white;
+        color: #ffffff;
         font-size: 1.3rem; }
   body .section {
     position: relative;
@@ -85,14 +89,14 @@ body {
           top: 0;
           left: 0;
           margin-bottom: 1rem;
-          background-color: #14a0c7; }
+          background-color: #ff4e33; }
     body .section div.section_card_wrap {
       width: 70rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       row-gap: 2rem;
-      color: white; }
+      color: #ffffff; }
       body .section div.section_card_wrap .section_card {
         display: flex;
         justify-content: flex-start;
@@ -100,7 +104,7 @@ body {
         width: 70rem;
         padding: 1rem 2rem 1rem 1rem;
         border-radius: 0.4rem;
-        background-color: #21232e; }
+        background-color: #3b3f50; }
         body .section div.section_card_wrap .section_card .section_card_img {
           border-radius: 0.4rem;
           width: 40%; }
@@ -113,14 +117,16 @@ body {
         body .section div.section_card_wrap .section_card .section_card_heading {
           font-size: 1.5rem;
           font-weight: 600; }
-        body .section div.section_card_wrap .section_card .section_card_text, body .section div.section_card_wrap .section_card .section_link {
-          color: #b1b6b5;
+        body .section div.section_card_wrap .section_card .section_link, body .section div.section_card_wrap .section_card .section_card_text {
+          color: #d9dede;
           line-height: 1.5; }
+        body .section div.section_card_wrap .section_card .section_card_text {
+          font-family: "Fresca", sans-serif; }
     body .section div.section_banner {
       position: absolute;
       top: 84.5rem;
       left: 21rem;
-      background: linear-gradient(to right, #62911a, #2f5dd0);
+      background: linear-gradient(to right, #e3ac00, #943050);
       width: 78rem;
       border-radius: 0.4rem;
       display: flex;
@@ -138,36 +144,39 @@ body {
             bottom: 0.05rem;
             left: 0;
             padding-top: 1rem;
-            background-color: #14a0c7; }
+            background-color: #ff4e33; }
       body .section div.section_banner .section_banner_text {
+        font-family: "Fresca", sans-serif;
         margin-top: 1rem;
         margin-bottom: 2rem;
-        color: #b1b6b5;
-        font-weight: 600; }
+        color: #d9dede;
+        font-weight: 500; }
       body .section div.section_banner .section_banner_button {
-        color: white;
-        background-color: #62911a;
+        color: #ffffff;
+        background-color: #e3ac00;
         border: none;
         padding: 1rem 2.5rem;
         font-size: 1rem;
         font-weight: 600;
         border-radius: 0.2rem; }
   body .footer-wrap {
+    font-family: "Fresca", sans-serif;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 15rem;
     padding-top: 7rem;
     padding-bottom: 3rem;
-    background-color: #21232e;
-    color: #b1b6b5; }
+    background-color: #3b3f50;
+    color: #d9dede; }
     body .footer-wrap .footer_logo {
       display: flex;
       justify-content: left;
-      column-gap: 1rem; }
+      column-gap: 0.3rem; }
       body .footer-wrap .footer_logo img {
         margin-top: 1rem; }
       body .footer-wrap .footer_logo p {
+        font-family: "Fresca", sans-serif;
         margin-top: 0.8rem;
         margin-bottom: 0;
         font-size: 1.5rem;
@@ -175,7 +184,8 @@ body {
         width: 4.5rem;
         display: flex;
         flex-direction: column;
-        justify-content: center; }
+        justify-content: center;
+        align-items: center; }
         body .footer-wrap .footer_logo p span {
           font-size: 0.65rem;
           font-weight: 600;
