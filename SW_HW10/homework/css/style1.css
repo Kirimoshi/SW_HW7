@@ -1,12 +1,12 @@
 body {
-  background-color: #21232e;
+  background-color: #ffffff;
   width: 1920px;
   margin: 0 auto;
   font-size: 16px;
-  color: #ffffff;
+  color: #2c2f3c;
   font-family: "Source Sans Pro", sans-serif; }
   body .header-wrap {
-    background-image: url("../img/m-h-night.jpg");
+    background-image: url("../img/m-h-day.jpg");
     background-size: cover;
     background-position: center;
     height: 700px;
@@ -21,7 +21,7 @@ body {
       body .header-wrap .landing-logo img {
         margin-top: 1rem; }
       body .header-wrap .landing-logo p {
-        font-family: "Fresca", sans-serif;
+        font-family: "Source Sans Pro", sans-serif;
         margin-top: 0.8rem;
         margin-bottom: 0;
         font-size: 1.5rem;
@@ -49,9 +49,9 @@ body {
           position: absolute;
           top: 0.55rem;
           left: 0;
-          background-color: #ff4e33; }
+          background-color: #14a0c7; }
     body .header-wrap .header_text {
-      font-family: "Fresca", sans-serif;
+      font-family: "Source Sans Pro", sans-serif;
       margin-top: 0;
       width: 38rem;
       line-height: 1.5;
@@ -64,7 +64,7 @@ body {
       margin-top: 4rem; }
       body .header-wrap .header-button-wrap .header_button {
         color: #ffffff;
-        background-color: #e3ac00;
+        background-color: #62911a;
         border: none;
         padding: 1rem 2.5rem;
         font-size: 1rem;
@@ -89,7 +89,7 @@ body {
           top: 0;
           left: 0;
           margin-bottom: 1rem;
-          background-color: #ff4e33; }
+          background-color: #14a0c7; }
     body .section div.section_card_wrap {
       width: 70rem;
       display: flex;
@@ -104,7 +104,7 @@ body {
         width: 70rem;
         padding: 1rem 2rem 1rem 1rem;
         border-radius: 0.4rem;
-        background-color: #3b3f50; }
+        background-color: #21232e; }
         body .section div.section_card_wrap .section_card .section_card_img {
           border-radius: 0.4rem;
           width: 40%; }
@@ -118,15 +118,15 @@ body {
           font-size: 1.5rem;
           font-weight: 600; }
         body .section div.section_card_wrap .section_card .section_link, body .section div.section_card_wrap .section_card .section_card_text {
-          color: #d9dede;
+          color: #b1b6b5;
           line-height: 1.5; }
         body .section div.section_card_wrap .section_card .section_card_text {
-          font-family: "Fresca", sans-serif; }
+          font-family: "Source Sans Pro", sans-serif; }
     body .section div.section_banner {
       position: absolute;
       top: 84.5rem;
       left: 21rem;
-      background: linear-gradient(to right, #e3ac00, #943050);
+      background: linear-gradient(to right, #62911a, #2f5dd0);
       width: 78rem;
       border-radius: 0.4rem;
       display: flex;
@@ -144,31 +144,31 @@ body {
             bottom: 0.05rem;
             left: 0;
             padding-top: 1rem;
-            background-color: #ff4e33; }
+            background-color: #14a0c7; }
       body .section div.section_banner .section_banner_text {
-        font-family: "Fresca", sans-serif;
+        font-family: "Source Sans Pro", sans-serif;
         margin-top: 1rem;
         margin-bottom: 2rem;
-        color: #d9dede;
+        color: #b1b6b5;
         font-weight: 500; }
       body .section div.section_banner .section_banner_button {
         color: #ffffff;
-        background-color: #e3ac00;
+        background-color: #62911a;
         border: none;
         padding: 1rem 2.5rem;
         font-size: 1rem;
         font-weight: 600;
         border-radius: 0.2rem; }
   body .footer-wrap {
-    font-family: "Fresca", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 15rem;
     padding-top: 7rem;
     padding-bottom: 3rem;
-    background-color: #3b3f50;
-    color: #d9dede; }
+    background-color: #21232e;
+    color: #b1b6b5; }
     body .footer-wrap .footer_logo {
       display: flex;
       justify-content: left;
@@ -176,7 +176,7 @@ body {
       body .footer-wrap .footer_logo img {
         margin-top: 1rem; }
       body .footer-wrap .footer_logo p {
-        font-family: "Fresca", sans-serif;
+        font-family: "Source Sans Pro", sans-serif;
         margin-top: 0.8rem;
         margin-bottom: 0;
         font-size: 1.5rem;
