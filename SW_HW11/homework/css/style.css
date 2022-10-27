@@ -1,0 +1,248 @@
+body {
+    min-width: 900px;
+    font-size: 14px;
+}
+
+.header-wrap {
+    background-image: url('../img/apples.jpg');
+    background-size: cover;
+    min-width: 900px;
+    min-height: 416px;
+    color: #FFF;
+    position: relative;
+}
+
+.header-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-heading-left-container {
+    position: relative;
+    top: 1rem;
+    left: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.menu {
+    position: relative;
+    top: 1rem;
+    right: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.menu-list li {
+    display: block;
+    margin: 0 0.5rem;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-text-center {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.header-text-center span {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.header-text-below {
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+.header-button-wrap {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-button {
+    background-color: #343638;
+    border: 2px solid white;
+    padding: 0.75rem 2.75rem;
+    color: white;
+    opacity: 0.75;
+    font-weight: 400;
+    font-size: 0.65rem;
+}
+
+.section_1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding: 2rem;
+    column-gap: 1.5rem;
+}
+
+.section_1_left_column {
+    display: inline-block;
+    width: 50%;
+    font-size: 1.1rem;
+}
+
+.section_1_right_column {
+    display: inline-block;
+    width: 50%;
+}
+
+.articles_section, .subscribe_section {
+    background-color: #f3f3f3;
+}
+
+.articles_section_paragraph {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.left-article {
+    display: flex;
+    margin-bottom: 0.7rem;
+}
+
+.left-picture-wrapper {
+    position: relative;
+    width: 60%;
+    margin: 0 2rem;
+}
+
+.left-article p {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.left-picture-wrapper img {
+    width: 100%;
+    filter: saturate(150%);
+}
+
+.date_paragraph_left {
+    color: white;
+    position: absolute;
+    left: 0.5rem;
+    bottom: 0.1rem;
+}
+
+.button_like_left {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.right-article {
+    display: flex;
+    margin-bottom: 0.7rem;
+}
+
+.last-article {
+    display: flex;
+}
+
+.right-picture-wrapper {
+    position: relative;
+    width: 60%;
+}
+
+.right-article p {
+    width: 30%;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.last-article p {
+    width: 30%;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.right-picture-wrapper img {
+    width: 100%;
+    filter: saturate(150%);
+}
+
+.date_paragraph_right {
+    color: white;
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0.5rem;
+}
+
+.button_like_right {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.button_like_left, .button_like_right {
+    background-color: #6b6b6b;
+    border: 1px solid white;
+    color: white;
+    font-size: 0.7rem;
+}
+
+.subscribe-form {
+    background-color: white;
+    margin: 1rem;
+}
+
+.footer-nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-footing {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-footing-left-container {
+    position: relative;
+    bottom: 0.3rem;
+    left: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
+/*body {
+    color: #B7C8D9;
+    color: #A4A4A4;
+    color: #F0F0F0;
+    color: #E8E8E8;
+    color: #9E9E9E;
+}*/
+
+
