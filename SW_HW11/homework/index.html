@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +48,7 @@
                 </p>
                 <article class="left-article">
                     <div class="left-picture-wrapper">
-                        <img src="./img/sample.jpg"/>
+                        <img src="./img/sample.jpg" alt="sample"/>
                         <p class="date_paragraph_left">Januari'15  <strong>South France</strong></p>
                         <button class="button_like_left">172 &hearts;</button>
                     </div>
@@ -57,14 +57,14 @@
                 <article class="right-article">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at consequatur consequuntur cum dicta dolore dolorum eius facere, inventore ipsam laudantium, nam omnis possimus quaerat quod sed tenetur ullam veritatis!</p>
                     <div class="right-picture-wrapper">
-                        <img class="right-picture" src="./img/sample1.jpg"/>
+                        <img class="right-picture" src="./img/sample1.jpg" alt="sample1"/>
                         <p class="date_paragraph_right">Januari'15 <strong>South America</strong></p>
                         <button class="button_like_right">172 &hearts;</button>
                     </div>
                 </article>
                 <article class="left-article">
                     <div class="left-picture-wrapper">
-                        <img src="./img/sample.jpg"/>
+                        <img src="./img/sample.jpg" alt="sample"/>
                         <p class="date_paragraph_left">Januari'15  <strong>South France</strong></p>
                         <button class="button_like_left">20 &hearts;</button>
                     </div>
@@ -73,43 +73,55 @@
                 <article class="last-article">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at consequatur consequuntur cum dicta dolore dolorum eius facere, inventore ipsam laudantium, nam omnis possimus quaerat quod sed tenetur ullam veritatis!</p>
                     <div class="right-picture-wrapper">
-                        <img class="right-picture" src="./img/sample1.jpg"/>
+                        <img class="right-picture" src="./img/sample1.jpg" alt="sample1"/>
                         <p class="date_paragraph_right">Januari'15 <strong>South America</strong></p>
                         <button class="button_like_right">150 &hearts;</button>
                     </div>
                 </article>
             </section>
             <section class="subscribe_section">
-                <form class="subscribe-form">
-                    <label for="email">Subscribe to our <strong>newsletter</strong></label>
-                    <input type="email" id="email" name="email" placeholder="Enter your e-mail address">
-                    <button type="submit">Subscribe</button>
-                </form>
+                <div class="subscribe-form-wrap">
+                    <form class="subscribe-form">
+                        <div class="subscribe-form-sub-wrap">
+                            <label for="email">Subscribe to our <strong>newsletter</strong></label>
+                            <div class="email-input-wrap">
+                                <input type="email" id="email" name="email" placeholder="Enter your e-mail address">
+                                <button type="submit" id="submit-email-button">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </section>
         </main>
         <footer class="footer">
             <div class="footer-wrap">
-                <nav class="footer-nav">
-                    <li><strong>Black & White</strong>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deleniti ea eveniet facere fuga impedit iste, iusto molestias nam nihil nulla numquam placeat provident quas quod repellendus sit suscipit unde?</p>
-                    </li>
-                    <li><strong>Last Tweet</strong>
-                    <p>...consectetur deleniti dignissimos dolor eos eum eveniet, excepturi exercitationem fuga maxime minima minus molestiae nisi quam qui sequi tenetur velit voluptate.</p></li>
-                    <li><strong>Contact</strong>
-                    <p>www.loremipsumdolar.nl 182 AB Your Street Name e-mail@loremipsum.com +(121)01 23 45 679</p></li>
-                    <li><strong>Newsletter</strong>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias debitis doloremque et facere facilis</p>
-                        <form class="subscribe-form">
-                            <input type="email" id="email" name="email" placeholder="Enter your e-mail address">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </li>
+                <nav>
+                    <ul class="footer-nav">
+                        <li><strong>Black & White</strong>
+                            <p class="footer-paragraph">iusto molestias nam nihil nulla numquam placeat provident quas quod repellendus sit suscipit unde?</p>
+                        </li>
+                        <li><strong>Last Tweet</strong>
+                            <p class="footer-paragraph">...consectetur deleniti dignissimos dolor eos eum eveniet, voluptate.<br/><span class="last-tweet-time>">3 hours ago</span></p></li>
+                        <li><strong>Contact</strong>
+                            <p class="footer-paragraph">www.loremipsumdolar.nl 182 AB Your Street Name e-mail@loremipsum.com +(121)01 23 45 679</p></li>
+                        <li class="last-li"><strong>Newsletter</strong>
+                            <div class="last-li-wrap">
+                                <p class="footer-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias debitis doloremque et facere facilis</p>
+                                <form class="footer-subscribe-form">
+                                    <div class="footer-input-wrap">
+                                        <input type="email" id="footer-email" name="footer-email" placeholder="Enter your e-mail address">
+                                        <button type="submit" id="footer-email-button">Subscribe</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
                 </nav>
                 <hr>
                 <div class="footer-footing">
                     <div class="footer-footing-left-container">&copy; 2015 Ruben Stom</div>
-                    <nav class="menu">
-                        <ul class="menu-list">
+                    <nav class="footer-menu">
+                        <ul class="footer-menu-list">
                             <li>Home</li>
                             <li>About</li>
                             <li>Shop</li>
