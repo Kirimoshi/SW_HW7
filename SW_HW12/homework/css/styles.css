@@ -331,10 +331,6 @@ div.submit-button {
 }
 
 @media (hover: hover) {
-  .header-heading-logo-container img:hover {
-    scale: 1.2;
-    animation: ease-in 0.3s;
-  }
   .menu-list a:hover {
     color: #0078aa;
   }
