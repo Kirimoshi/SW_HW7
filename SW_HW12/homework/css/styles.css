@@ -209,12 +209,6 @@ body {
   row-gap: 0.5rem;
 }
 
-#date::-webkit-inner-spin-button,
-#date::-webkit-calendar-picker-indicator {
-  opacity:0;
-  -webkit-appearance: none;
-}
-
 div.submit-button {
   display: flex;
   justify-content: center;
