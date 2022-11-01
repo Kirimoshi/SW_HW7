@@ -7,5 +7,353 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  position: relative;
 }
 
+.header-heading {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+}
+
+.fixed-up-button {
+  position: fixed;
+  bottom: 3rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #0078aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.fixed-up-button svg {
+  fill: #fff;
+  width: 35%;
+  height: 35%;
+}
+
+.header-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.menu-list li {
+  display: block;
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+
+.empty-div {
+  height: 5.5rem;
+}
+
+.header-text-wrapper {
+  background-image: url("../img/lady.jpg");
+  background-size: cover;
+  background-position: left 30% bottom 0;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  /*padding-left: 2rem;
+  padding-right: 2rem;*/
+}
+
+.header-text p {
+  text-align: center;
+}
+
+.header-text-center {
+  /*margin-top: 5rem;*/
+  font-size: 2.2rem;
+  color: black;
+  font-weight: 700;
+  width: 70%;
+}
+
+.header-text-below {
+  font-size: 1.1rem;
+  color: #363636;
+  margin-top: 0;
+}
+
+.header-icons-wrap {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.header-icons-wrap div {
+  width: 3rem;
+  height: 3rem;
+  background-color: #0078aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.header-icons-wrap svg {
+  fill: #fff;
+  width: 60%;
+  height: 60%;
+}
+
+.tools-pic img {
+  width: 100%;
+}
+
+.about-clinic-articles-wrapper {
+  text-align: center;
+}
+
+.about-clinic-p {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.prof-care {
+  color: #0078aa;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.about-clinic-articles-wrapper > article > p::before {
+  content: "\27AA";
+  color: #0078aa;
+}
+
+.services-section {
+  background-image: url("../img/services_bg.jpg");
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.services-section > p {
+  text-align: center;
+}
+
+.services-section > p:first-child {
+  font-size: 1.7rem;
+  margin-bottom: 0;
+}
+
+.services-section article {
+  background-color: white;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.pricing-section {
+  text-align: center;
+}
+
+.xmark-div {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing-articles-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.pricing-articles-wrapper article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.border {
+  border: 1px solid #0078aa;
+  border-left: 2px solid #0078aa;
+  border-bottom: 2px solid #0078aa;
+}
+
+.get-now-button {
+  border: 2px solid #0078aa;
+  border-radius: 1rem;
+  width: 40%;
+  padding: 1rem;
+  color: #0078aa;
+  background-color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section-left-container img {
+  width: 100%;
+}
+
+.contact-form-wrapper {
+  padding: 0 1rem 1rem;
+  margin-top: -0.5rem;
+}
+
+.contact-form-wrapper p {
+  text-align: center;
+}
+
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+#date::-webkit-inner-spin-button,
+#date::-webkit-calendar-picker-indicator {
+  opacity:0;
+  -webkit-appearance: none;
+}
+
+div.submit-button {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+#submit-button {
+  border: none;
+  border-radius: 1rem;
+  width: 40%;
+  padding: 1rem;
+  color: #fff;
+  background-color: #0078aa;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.footer-wrap {
+  background-color: #363636;
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.borderless-field {
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #d5d4d4;
+  color: #363636;
+}
+
+.borderless-field-full {
+  border: none;
+}
+
+.text-indent-03rem {
+  text-indent: 0.3rem;
+}
+
+.text-indent-05rem {
+  text-indent: 0.5rem;
+}
+
+
+.svg-white {
+  fill: white;
+}
+
+.svg-primary {
+  fill: #0078aa;
+}
+
+/*atomic CSS*/
+
+.bg-blue {
+  background-color: #47c9e5;
+}
+
+.fs1-2rem {
+  font-size: 1.2rem;
+}
+
+.fs1-5rem {
+  font-size: 1.5rem;
+}
+
+.fs-2rem {
+  font-size: 2rem;
+}
+
+.fs-3rem {
+  font-size: 3rem;
+}
+
+.fs-4rem {
+  font-size: 4rem;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fs-italic {
+  font-style: italic;
+}
+
+.pd1rem {
+  padding: 1rem;
+}
+
+.pd-bottom05rem {
+  padding-bottom: 0.5rem;
+}
+
+.pd-bottom1rem {
+  padding-bottom: 1rem;
+}
+
+.color-white {
+  color: white;
+}
+
+.color-primary {
+  color: #0078aa;
+}
+
+.color-blue {
+  color: #47c9e5;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
