@@ -1,1 +1,17 @@
-/*Your code goes here*/
+body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-color {
+    background-color: #525252;
+}
+
+.btn-secondary {
+    background-color: coral;
+}
+
+.clr-black {
+    color: #111;
+}
