@@ -12,6 +12,10 @@ body {
     background-color: coral;
 }
 
+.bg-color-white {
+    background-color: white;
+}
+
 .clr-black {
     color: #111;
 }
