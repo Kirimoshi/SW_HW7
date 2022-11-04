@@ -1,5 +1,94 @@
 body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 18px;
+  background-color: #f4f4f4;
 }
 
+.clr-white {
+  color: white;
+}
+.clr-blue {
+  color: #76cdd8;
+}
+
+.clr-darkblue {
+  color: #0c0cee;
+}
+
+.bg-color-blue {
+  background-color: #76cdd8;
+}
+
+.bg-color-white {
+  background-color: white;
+}
+
+.section1__button, .section2__button, .section3__button, .section4__submit-button {
+  background-color: #019999;
+  text-transform: uppercase;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.section4__fieldset {
+  background-color: white;
+  border: none;
+}
+
+.section4__form-wrapper {
+  background-color: #76cdd8;
+}
+
+.bg-color-emerald {
+  background-color: #019999;
+}
+
+.section1 {
+  display: flex;
+  column-gap: 0;
+  flex-flow: row wrap;
+  margin: 2rem 4rem;
+}
+
+.section1__article {
+  width: 50%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1__article:nth-child(3) {
+  display: block;
+}
+
+.section1__article:nth-child(6) {
+  flex-flow: column nowrap;
+}
+
+.section1__article3-wrapper {
+  margin: 2rem 3rem;
+}
+
+.section1__button1 {
+  float: right;
+}
+
+.section1__article4 {
+  background:
+          url("../img/image-04.jpg")
+          no-repeat;
+  background-size: cover;
+}
+
+.section1__article5 {
+  background:
+          url("../img/image-01.jpg")
+          no-repeat;
+  background-size: cover;
+}
