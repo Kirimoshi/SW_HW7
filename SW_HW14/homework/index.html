@@ -14,12 +14,14 @@
       <main>
         <section class="section1">
           <article class="section1__article bg-color-blue clr-white">
-            <h2>Epam</h2>
+            <h2 class="fs-lg letter-spacing-1">Epam</h2>
             <p></p>
           </article>
           <article class="section1__article italic bg-color-white">
-            <h2></h2>
-            <p>"What We Do We help customers around the world become competitive – and stay competitive.  We combine best-in-class software engineering with digital strategy and experience design, business consulting and technology innovation services. "</p>
+            <div class="section1__article2-wrapper">
+              <h2></h2>
+              <p>"What We Do We help customers around the world become competitive – and stay competitive.  We combine best-in-class software engineering with digital strategy and experience design, business consulting and technology innovation services. "</p>
+            </div>
           </article>
           <article class="section1__article bg-color-white">
             <div class="section1__article3-wrapper">
@@ -30,20 +32,25 @@
             </div>
           </article>
           <article class="section1__article section1__article4 bg-color-blue clr-white">
+            <div class="section1__article4-img-div">
+
+            </div>
             <h2></h2>
-            <p>Epic Games: Transforming the Gaming Industry.</p>
+            <p class="section1__article4-paragraph fs-sm">Epic Games: Transforming the Gaming Industry.</p>
           </article>
           <article class="section1__article section1__article5">
             <h2></h2>
           </article>
           <article class="section1__article bg-color-white">
-            <h2>Architecting Security into Your Modern Enterprise</h2>
-            <p>It's time to engineer a trusted future through strategically architected cybersecurity. <span class="clr-darkblue">Epam</span>
-            website. Thank you.</p>
-            <button class="section1__button" type="button">Read more</button>
+            <div class="section1__article6-wrapper">
+              <h2 class="mb-0">Architecting Security into Your Modern Enterprise</h2>
+              <p>It's time to engineer a trusted future through strategically architected cybersecurity. <span class="clr-darkblue">Epam</span>
+                website. Thank you.</p>
+              <button class="section1__button" type="button">Read more</button>
+            </div>
           </article>
         </section>
-        <section class="section2">
+        <section class="section2 bg-color-white">
           <div class="section2__article-wrapper">
             <article class="section2__article">
               <h2 class="clr-blue">Lorem ipsum dolor sit.</h2>
@@ -56,22 +63,22 @@
           <div class="section2__article-wrapper">
             <article>
               <h2></h2>
-              <img src="./img/image-02.jpg" alt="image2">
+              <img class="section2__img" src="./img/image-02.jpg" alt="image2">
             </article>
           </div>
         </section>
-        <section class="section3">
+        <section class="section3 bg-color-white">
           <div class="section3__article-wrapper">
             <article class="section3__article">
               <h6></h6>
-              <img src="./img/image-03.jpg" alt="image3">
+              <img class="section3__img" src="./img/image-03.jpg" alt="image3">
             </article>
           </div>
           <div class="section3__article-wrapper">
-            <article class="section3__article">
+            <article class="section3__article section3__article2">
               <div class="section3__card">
                 <div class="section3__card-header clr-white bg-color-emerald">
-                  <h4>Standard Plan</h4>
+                  <h4 class="mt-0">Standard Plan</h4>
                   <p>($25 per month)</p>
                 </div>
                 <div class="section3__card-body">
@@ -80,13 +87,13 @@
                   <p class="section3__card-paragraph">Lorem ipsum dolor.</p>
                   <p class="section3__card-paragraph">Lorem ipsum dolor.</p>
                   <p class="section3__card-paragraph">Lorem ipsum dolor sit.</p>
-                  <p class="section3__card-paragraph">Lorem ipsum.</p>
+                  <p class="section3__card-paragraph mb-2">Lorem ipsum.</p>
                   <button class="section3__button">Buy Now</button>
                 </div>
               </div>
               <div class="section3__card">
                 <div class="section3__card-header clr-white bg-color-emerald">
-                  <h4>Advanced Plan</h4>
+                  <h4 class="mt-0">Advanced Plan</h4>
                   <p>($40 per month)</p>
                 </div>
                 <div class="section3__card-body">
@@ -95,34 +102,36 @@
                   <p class="section3__card-paragraph">Lorem ipsum dolor.</p>
                   <p class="section3__card-paragraph">Lorem ipsum dolor.</p>
                   <p class="section3__card-paragraph">Lorem ipsum dolor sit.</p>
-                  <p class="section3__card-paragraph">Lorem ipsum.</p>
+                  <p class="section3__card-paragraph mb-2">Lorem ipsum.</p>
                   <button class="section3__button">Buy Now</button>
                 </div>
               </div>
+              <br>
+              <span class="section3__special-discount-text fs-sm"><span class="star-span">*</span> Special discount</span>
             </article>
           </div>
         </section>
         <section class="section4">
           <div class="section4__article-wrapper">
             <article class="section4__article">
-              <div class="section4__form-wrapper">
-                <form class="section4__submit-form">
-                  <fieldset class="section4__fieldset">
-                    <legend class="clr-white">Application form</legend>
+              <div class="section4__article-sub-wrapper">
+                <h3 class="section4__heading clr-white">Application form</h3>
+                <div class="section4__form-wrapper bg-color-white">
+                  <form class="section4__submit-form">
                     <div class="section4__first-div">
                       <div class="section4__input-wrapper">
-                        <label for="full-name"></label><input type="text" name="full-name" id="full-name">
-                        <label for="email"></label><input type="email" name="email" id="email">
-                        <label for="position"></label><input type="text" name="position" id="position">
-                        <label for="salary"></label><input type="number" name="salary" id="salary">
+                        <label for="full-name"></label><input type="text" name="full-name" id="full-name" placeholder="Full Name">
+                        <label for="email"></label><input type="email" name="email" id="email" placeholder="Your Email">
+                        <label for="position"></label><input class="border-black" type="text" name="position" id="position" placeholder="Position">
+                        <label for="salary"></label><input class="border-black" type="number" name="salary" id="salary" placeholder="Salary">
                       </div>
                       <div class="section4__textarea">
                         <label for="additional-message"></label><textarea name="additional-message" id="additional-message" cols="30" rows="10" placeholder="Additional Message"></textarea>
                       </div>
                     </div>
                     <button class="section4__submit-button" type="button">Submit</button>
-                  </fieldset>
-                </form>
+                  </form>
+                </div>
               </div>
             </article>
           </div>
