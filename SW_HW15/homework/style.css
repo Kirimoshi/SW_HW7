@@ -1,0 +1,110 @@
+:root {
+  --primary-color: #f2c744;
+  --light: #f4f6f9;
+  --dark: #000;
+  --primary-font: 'Shadows Into Light', cursive;
+  --secondary-font: 'Dancing Script', cursive;
+}
+
+/*.header {
+  grid-area: header;
+}*/
+
+.section-images {
+  grid-area: images;
+}
+
+.section-bio {
+  grid-area: bio;
+}
+
+/*.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header"
+    "images images bio"
+    "footer footer footer";
+}*/
+
+.header-wrapper {
+  display: grid;
+  justify-items: center;
+  margin: 1rem;
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-05 {
+  margin-top: 0.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.header__logo-img {
+  width: 8rem;
+  height: auto;
+}
+
+.heading {
+  font-family: var(--secondary-font);
+}
+
+.paragraph {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  font-style: normal;
+}
+
+.shadowed {
+  box-shadow: 0 0 0.5rem 0.1rem grey;
+}
+
+.section-images-wrapper {
+  width: 60%;
+  float: left;
+}
+
+.section-images {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: auto;
+}
+
+.section-bio {
+  display: grid;
+  justify-items: center;
+  margin: 1rem;
+}
+
+.section-bio-wrapper {
+  width: 30%;
+  float: right;
+}
+
+.section-bio__avatar {
+  width: 5vw;
+  height: 5vw;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.footer-wrapper {
+  display: grid;
+  justify-items: center;
+  margin: 1rem;
+}
+
+.footer__logo-img {
+  width: 4rem;
+  height: auto;
+}
