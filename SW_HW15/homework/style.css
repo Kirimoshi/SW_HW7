@@ -6,6 +6,10 @@
   --secondary-font: 'Dancing Script', cursive;
 }
 
+.empty-heading {
+  display: none;
+}
+
 .section-images {
   grid-area: images;
 }
