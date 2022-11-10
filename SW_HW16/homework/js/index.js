@@ -11,39 +11,80 @@ class Pizza {
     constructor(size, type) {
         this.size = size;
         this.type = type;
+        this.extraIngredientsCost = 0;
     }
 
     addExtraIngredient(ingredient) {
-
+        this.extraIngredientsCost += ingredient.price;
     }
     removeExtraIngredient(ingredient) {
-
+        this.extraIngredientsCost -= ingredient.price;
     }
     getSize() {
-        return this.size
+        return this.size.name
     }
     getPrice() {
-
+        return this.size.price + this.type.price + this.extraIngredientsCost
     }
 }
 
 /* Sizes, types and extra ingredients */
-Pizza.SIZE_S = 50;
-Pizza.SIZE_M = 75;
-Pizza.SIZE_L = 100;
+Pizza.SIZE_S = {
+    name: 'Pizza.SIZE_S',
+    price: 50,
+};
+Pizza.SIZE_M = {
+    name: 'Pizza.SIZE_M',
+    price: 75,
+};
+Pizza.SIZE_L = {
+    name: 'Pizza.SIZE_L',
+    price: 100,
+};
 
-Pizza.TYPE_VEGGIE = 50;
-Pizza.TYPE_MARGHERITA = 60;
-Pizza.TYPE_PEPPERONI = 70;
+Pizza.TYPE_VEGGIE = {
+    name: 'Pizza.TYPE_VEGGIE',
+    price: 50,
+};
+Pizza.TYPE_MARGHERITA = {
+    name: 'Pizza.TYPE_MARGHERITA',
+    price: 60,
+};
+Pizza.TYPE_PEPPERONI = {
+    name: 'Pizza.TYPE_PEPPERONI',
+    price: 70,
+};
 
-Pizza.EXTRA_TOMATOES = 5;
-Pizza.EXTRA_CHEESE = 7;
-Pizza.EXTRA_MEAT = 9;
+Pizza.EXTRA_TOMATOES = {
+    name: 'Pizza.EXTRA_TOMATOES',
+    price: 5,
+};
+Pizza.EXTRA_CHEESE = {
+    name: 'Pizza.EXTRA_CHEESE',
+    price: 7,
+};
+Pizza.EXTRA_MEAT = {
+    name: 'Pizza.EXTRA_MEAT',
+    price: 9,
+};
 
 /* Allowed properties */
 Pizza.allowedSizes = [Pizza.SIZE_S, Pizza.SIZE_M, Pizza.SIZE_L];
 Pizza.allowedTypes = [Pizza.TYPE_VEGGIE, Pizza.TYPE_MARGHERITA, Pizza.TYPE_PEPPERONI];
-Pizza.allowedExtraIngredients = [Pizza.EXTRA_TOMATOES, Pizza.EXTRA_CHEESE, Pizza.EXTRA_MEAT];
+Pizza.allowedExtraIngredients = [
+    {
+        name: 'tomatoes',
+        price: 5,
+    },
+    {
+        name: 'cheese',
+        price: 7,
+    },
+    {
+        name: 'meat',
+        price: 9,
+    }
+];
 
 
 /**
@@ -55,8 +96,6 @@ class PizzaException {
 
 }
 
-
-/* It should work */ 
 // // small pizza, type: veggie
 // let pizza = new Pizza(Pizza.SIZE_S, Pizza.TYPE_VEGGIE);
 // // add extra meat
@@ -69,8 +108,7 @@ class PizzaException {
 // pizza.addExtraIngredient(Pizza.EXTRA_TOMATOES);
 // // check price
 // console.log(`Price with extra ingredients: ${pizza.getPrice()} UAH`); // Price: 121 UAH
-// // check pizza size
-// console.log(`Is pizza large: ${pizza.getSize() === Pizza.SIZE_L}`); //=> Is pizza large: false
+
 // // remove extra ingredient
 // pizza.removeExtraIngredient(Pizza.EXTRA_CHEESE);
 // console.log(`Extra ingredients: ${pizza.getExtraIngredients().length}`); //=> Extra ingredients: 2
@@ -86,4 +124,4 @@ class PizzaException {
 // pizza.addExtraIngredient(Pizza.EXTRA_MEAT); // => Duplicate ingredient
 
 // let pizza = new Pizza(Pizza.SIZE_S, Pizza.TYPE_VEGGIE);
-// pizza.addExtraIngredient(Pizza.EXTRA_MEAT); // => Invalid ingredient
+// pizza.addExtraIngredient(Pizza.EXTRA_CORN); // => Invalid ingredient
