@@ -1,24 +1,56 @@
 'use strict';
 
-/**
- * Class
- * @constructor
- * @param size - size of pizza
- * @param type - type of pizza
- * @throws {PizzaException} - in case of improper use
- */
 class Pizza {
     constructor(size, type) {
-        this.size = size;
-        this.type = type;
+        const requiredNumberOfArgumentsPassed = 2;
+        if (arguments.length !== requiredNumberOfArgumentsPassed) {
+            throw new PizzaException(`Required two arguments, given: ${arguments.length}`);
+        }
+
+        if (Pizza.allowedSizes.includes(size)) {
+            this.size = size;
+        } else {
+            throw new PizzaException('Invalid size');
+        }
+        if (Pizza.allowedTypes.includes(type)) {
+            this.type = type;
+        } else {
+            throw new PizzaException('Invalid type');
+        }
+
+        this.extraIngredientsSet = new Set();
         this.extraIngredientsCost = 0;
     }
 
     addExtraIngredient(ingredient) {
-        this.extraIngredientsCost += ingredient.price;
+        if (arguments.length !== 1) {
+            throw new PizzaException(`Required one argument, given: ${arguments.length}`);
+        }
+
+        if (Pizza.allowedExtraIngredients.includes(ingredient)) {
+            if (!this.extraIngredientsSet.has(ingredient)) {
+                this.extraIngredientsSet.add(ingredient);
+                this.extraIngredientsCost += ingredient.price;
+            } else {
+                throw new PizzaException('Duplicate ingredient');
+            }
+        } else {
+            throw new PizzaException('Invalid ingredient');
+        }
     }
     removeExtraIngredient(ingredient) {
-        this.extraIngredientsCost -= ingredient.price;
+        if (arguments.length !== 1) {
+            throw new PizzaException(`Required one argument, given: ${arguments.length}`);
+        }
+
+        if (Pizza.allowedExtraIngredients.includes(ingredient)) {
+            if (this.extraIngredientsSet.has(ingredient)) {
+                this.extraIngredientsSet.delete(ingredient);
+                this.extraIngredientsCost -= ingredient.price;
+            }
+        } else {
+            throw new PizzaException();
+        }
     }
     getSize() {
         return this.size.name
@@ -26,102 +58,71 @@ class Pizza {
     getPrice() {
         return this.size.price + this.type.price + this.extraIngredientsCost
     }
+    getExtraIngredients() {
+        const extraIngredientsArray = [];
+        this.extraIngredientsSet.forEach((item) => extraIngredientsArray.push(item.infoName));
+        return extraIngredientsArray
+    }
+    getPizzaInfo() {
+        return `Size: ${this.size.infoName}, type: ${this.type.infoName}; 
+        extra ingredients: ${this.getExtraIngredients().join(', ')}; price: ${this.getPrice()} UAH.`
+    }
 }
 
-/* Sizes, types and extra ingredients */
 Pizza.SIZE_S = {
     name: 'Pizza.SIZE_S',
-    price: 50,
+    infoName: 'SMALL',
+    price: 50
 };
 Pizza.SIZE_M = {
     name: 'Pizza.SIZE_M',
-    price: 75,
+    infoName: 'MEDIUM',
+    price: 75
 };
 Pizza.SIZE_L = {
     name: 'Pizza.SIZE_L',
-    price: 100,
+    infoName: 'LARGE',
+    price: 100
 };
 
 Pizza.TYPE_VEGGIE = {
     name: 'Pizza.TYPE_VEGGIE',
-    price: 50,
+    infoName: 'VEGGIE',
+    price: 50
 };
 Pizza.TYPE_MARGHERITA = {
     name: 'Pizza.TYPE_MARGHERITA',
-    price: 60,
+    infoName: 'MARGHERITA',
+    price: 60
 };
 Pizza.TYPE_PEPPERONI = {
     name: 'Pizza.TYPE_PEPPERONI',
-    price: 70,
+    infoName: 'PEPPERONI',
+    price: 70
 };
 
 Pizza.EXTRA_TOMATOES = {
     name: 'Pizza.EXTRA_TOMATOES',
-    price: 5,
+    infoName: 'TOMATOES',
+    price: 5
 };
 Pizza.EXTRA_CHEESE = {
     name: 'Pizza.EXTRA_CHEESE',
-    price: 7,
+    infoName: 'CHEESE',
+    price: 7
 };
 Pizza.EXTRA_MEAT = {
     name: 'Pizza.EXTRA_MEAT',
-    price: 9,
+    infoName: 'MEAT',
+    price: 9
 };
 
-/* Allowed properties */
 Pizza.allowedSizes = [Pizza.SIZE_S, Pizza.SIZE_M, Pizza.SIZE_L];
 Pizza.allowedTypes = [Pizza.TYPE_VEGGIE, Pizza.TYPE_MARGHERITA, Pizza.TYPE_PEPPERONI];
-Pizza.allowedExtraIngredients = [
-    {
-        name: 'tomatoes',
-        price: 5,
-    },
-    {
-        name: 'cheese',
-        price: 7,
-    },
-    {
-        name: 'meat',
-        price: 9,
-    }
-];
+Pizza.allowedExtraIngredients = [Pizza.EXTRA_TOMATOES, Pizza.EXTRA_CHEESE, Pizza.EXTRA_MEAT];
 
-
-/**
- * Provides information about an error while working with a pizza.
- * details are stored in the log property.
- * @constructor
- */
 class PizzaException {
-
+    constructor(log) {
+        this.log = log;
+    }
 }
-
-// // small pizza, type: veggie
-// let pizza = new Pizza(Pizza.SIZE_S, Pizza.TYPE_VEGGIE);
-// // add extra meat
-// pizza.addExtraIngredient(Pizza.EXTRA_MEAT);
-// // check price
-// console.log(`Price: ${pizza.getPrice()} UAH`); //=> Price: 109 UAH
-// // add extra cheese
-// pizza.addExtraIngredient(Pizza.EXTRA_CHEESE);
-// // add extra tomatoes
-// pizza.addExtraIngredient(Pizza.EXTRA_TOMATOES);
-// // check price
-// console.log(`Price with extra ingredients: ${pizza.getPrice()} UAH`); // Price: 121 UAH
-
-// // remove extra ingredient
-// pizza.removeExtraIngredient(Pizza.EXTRA_CHEESE);
-// console.log(`Extra ingredients: ${pizza.getExtraIngredients().length}`); //=> Extra ingredients: 2
-// console.log(pizza.getPizzaInfo()); //=> Size: SMALL, type: VEGGIE; extra ingredients: MEAT,TOMATOES; price: 114UAH.
-
-// examples of errors
-// let pizza = new Pizza(Pizza.SIZE_S); // => Required two arguments, given: 1
-
-// let pizza = new Pizza(Pizza.SIZE_S, Pizza.SIZE_S); // => Invalid type
-
-// let pizza = new Pizza(Pizza.SIZE_S, Pizza.TYPE_VEGGIE);
-// pizza.addExtraIngredient(Pizza.EXTRA_MEAT);
-// pizza.addExtraIngredient(Pizza.EXTRA_MEAT); // => Duplicate ingredient
-
-// let pizza = new Pizza(Pizza.SIZE_S, Pizza.TYPE_VEGGIE);
-// pizza.addExtraIngredient(Pizza.EXTRA_CORN); // => Invalid ingredient
