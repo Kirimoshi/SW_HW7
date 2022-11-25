@@ -1,4 +1,4 @@
-const URL = 'https://jsonplaceholder.typicode.com/users/';
+const fetchURL = 'https://jsonplaceholder.typicode.com/users/';
 const GET_USERS_BUTTON = document.querySelector('.button-div__get-users-button');
 const UPDATE_USER_BUTTON = document.querySelector('.button-div__update-user-button');
 const DELETE_USER_BUTTON = document.querySelector('.button-div__delete-user-button');
@@ -10,7 +10,7 @@ async function getAsyncUserList() {
     showSpinner();
 
     try {
-        const response = await fetch(URL);
+        const response = await fetch(fetchURL);
         const json = await response.json();
         hideSpinner();
         json.forEach((user, index) => {
@@ -39,7 +39,9 @@ USER_LIST.addEventListener('click', (event) => {
 function getUserBody() {
     const textAreaList = document.querySelectorAll('textarea');
     textAreaList.forEach(user => {
-        if (user.getAttribute('id') === targetUserId) return user.textContent;
+        if (user.getAttribute('id') === targetUserId) {
+            return user.textContent;
+        }
     })
 }
 
@@ -63,7 +65,7 @@ const deleteMethod = {
 
 UPDATE_USER_BUTTON.addEventListener('click', () => {
     showSpinner();
-    fetch(URL+`${targetUserId}`, putMethod)
+    fetch(fetchURL+`${targetUserId}`, putMethod)
         .then(() => {
             console.log('PUT request done');
             hideSpinner();
@@ -72,7 +74,7 @@ UPDATE_USER_BUTTON.addEventListener('click', () => {
 
 DELETE_USER_BUTTON.addEventListener('click', () => {
     showSpinner();
-    fetch(URL+`${targetUserId}`, deleteMethod)
+    fetch(fetchURL+`${targetUserId}`, deleteMethod)
         .then(() => {
             console.log('DELETE request done');
             hideSpinner();
