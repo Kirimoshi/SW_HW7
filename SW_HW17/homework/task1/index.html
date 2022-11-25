@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+      <title>AJAX</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+      <style>
+          #spinner{
+              visibility: hidden;
+              width: 80px;
+              height: 80px;
+
+              border: 2px solid #f3f3f3;
+              border-top:3px solid #f25a41;
+              border-radius: 100%;
+
+              position: absolute;
+              top:0;
+              bottom:0;
+              left:0;
+              right: 0;
+              margin: auto;
+
+              animation: spin 1s infinite linear;
+          }
+
+          @keyframes spin {
+              from {
+                  transform: rotate(0deg);
+              } to {
+                    transform: rotate(360deg);
+                }
+          }
+
+          #spinner.show {
+              visibility: visible;
+          }
+      </style>
+  </head>
+
+  <body>
+    <p class="instruction-paragraph">In order to get user list, click 'GET USER LIST' button below.</p>
+    <p class="instruction-paragraph">In order to update user, edit user info and click 'UPDATE USER' button below.</p>
+    <p class="instruction-paragraph">In order to delete user, click on user info and then 'DELETE USER' button below.</p>
+    <div class="button-div">
+        <button type="button" class="button-div__get-users-button">
+            GET USER LIST
+        </button>
+        <button type="button" class="button-div__update-user-button">
+            UPDATE USER
+        </button>
+        <button type="button" class="button-div__delete-user-button">
+            DELETE USER
+        </button>
+        <div id="spinner"></div>
+    </div>
+    <div class="list-div">
+        <ul class="user-list">
+
+        </ul>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
