@@ -1,0 +1,28 @@
+body {
+    background-color: #000;
+    font-size: 14px;
+}
+
+.main__message-block-wrapper {
+    color: #03A062;
+    font-weight: bold;
+}
+
+.footer__send-button {
+    background-color: #03A062;
+    color: #000000;
+    font-weight: bold;
+}
+
+.footer {
+    position: relative;
+    top: 1rem;
+    bottom: 1rem;
+    width: 95%;
+    left: 1rem;
+}
+
+#messageToSend {
+    width: 95vw;
+    height: 5vh;
+}
