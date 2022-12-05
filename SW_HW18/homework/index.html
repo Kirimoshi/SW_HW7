@@ -421,12 +421,12 @@
 
   <!-- Vendor Scripts -->
   <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js" async></script>
+  <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.parallax.js"></script>
   <script src="js/smoothscroll.js"></script>
-  <script src="js/lazyload.min.js" async></script>
+  <script src="js/lazyload.min.js" defer></script>
   <!-- Custom Scripts -->
-  <script src="js/custom.js" async></script>
+  <script src="js/custom.js" defer></script>
 
 </head>
 
@@ -492,10 +492,10 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <picture>
-                  <source srcset="./img/blog-image1_mobile.webp" media="(max-width: 640px)">
-                  <img class="img-responsive" src="img/blog-image1.webp" alt="Blog Image">
-                </picture>
+                  <img class="img-responsive"
+                       srcset="./img/blog-image1_mobile.webp 640w, ./img/blog-image1.webp 1200w"
+                       sizes="(max-width: 640px) 640px, 80vw"
+                       src="img/blog-image1.webp" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
@@ -520,10 +520,10 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <picture>
-                  <source srcset="./img/blog-image2_mobile.webp" media="(max-width: 640px)">
-                  <img class="img-responsive" src="img/blog-image2.webp" alt="Blog Image">
-                </picture>
+                <img class="img-responsive"
+                     srcset="./img/blog-image2_mobile.webp 640w, ./img/blog-image2.webp 1200w"
+                     sizes="(max-width: 640px) 640px, 80vw"
+                     src="img/blog-image2.webp" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
@@ -548,10 +548,10 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <picture>
-                  <source srcset="./img/blog-image3_mobile.webp" media="(max-width: 640px)">
-                  <img class="img-responsive" src="img/blog-image3.jpg" alt="Blog Image">
-                </picture>
+                <img class="img-responsive"
+                     srcset="./img/blog-image3_mobile.webp 640w, ./img/blog-image3.jpg 1000w"
+                     sizes="(max-width: 640px) 640px, 80vw"
+                     src="img/blog-image3.jpg" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
@@ -576,10 +576,10 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <picture>
-                  <source srcset="./img/blog-image4_mobile.webp" media="(max-width: 640px)">
-                  <img class="img-responsive" src="img/blog-image4.webp" alt="Blog Image">
-                </picture>
+                <img class="img-responsive"
+                     srcset="./img/blog-image4_mobile.webp 640w, ./img/blog-image4.webp 1200w"
+                     sizes="(max-width: 640px) 640px, 80vw"
+                     src="img/blog-image4.webp" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
@@ -604,10 +604,10 @@
           <div class="blog-post-thumb">
             <div class="blog-post-image">
               <a href="#">
-                <picture>
-                  <source srcset="./img/blog-image5_mobile.webp" media="(max-width: 640px)">
-                  <img class="img-responsive" src="img/blog-image5.webp" alt="Blog Image">
-                </picture>
+                <img class="img-responsive"
+                     srcset="./img/blog-image5_mobile.webp 640w, ./img/blog-image5.webp 1200w"
+                     sizes="(max-width: 640px) 640px, 80vw"
+                     src="img/blog-image5.webp" alt="Blog Image">
               </a>
             </div>
             <div class="blog-post-title">
