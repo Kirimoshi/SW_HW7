@@ -11,7 +11,7 @@ body {
 }
 
 /*---------------------------------------
-    Typorgraphy
+    Typography
 -----------------------------------------*/
 
 h1,h2,h3,h4,h5,h6 {
@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6 {
 h1 {
     font-size: 62px;
     padding-bottom: 14px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -131,20 +131,6 @@ a:hover, a:active, a:focus {
     Preloader section
 -----------------------------------------*/
 
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1020;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  background: none repeat scroll 0 0 #ffffff;
-}
-
 .sk-spinner-wordpress.sk-spinner {
   background-color: #bfba55;
   width: 40px;
@@ -168,21 +154,17 @@ a:hover, a:active, a:focus {
 
 @-webkit-keyframes sk-innerCircle {
   0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0); }
+    transform: rotate(0); }
 
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    transform: rotate(360deg); } }
 
 @keyframes sk-innerCircle {
   0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0); }
+    transform: rotate(0); }
 
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    transform: rotate(360deg); } }
 
 
 
@@ -280,19 +262,19 @@ a:hover, a:active, a:focus {
 }
 
 .main-about {
-  background: url('../img/about-bg.jpg') no-repeat;
+  /*background: url('../img/about-bg.jpg') no-repeat;*/
 }
 
 .main-single-post {
-  background: url('../img/single-post-bg.jpg') no-repeat;
+  /*background: url('../img/single-post-bg.jpg') no-repeat;*/
 }
 
 .main-gallery {
-  background: url('../img/gallery-bg.jpg') no-repeat;
+  /*background: url('../img/gallery-bg.jpg') no-repeat;*/
 }
 
 .main-contact {
-  background: url('../img/contact-bg.jpg') no-repeat;
+  /*background: url('../img/contact-bg.jpg') no-repeat;*/
 }
 
 #particles-js {
@@ -340,7 +322,7 @@ a:hover, a:active, a:focus {
 }
 
 #about .col-md-6 img {
-  padding: 22px 0px 22px 22px;
+  padding: 22px 0 22px 22px;
 }
 
 #about .col-md-4 {
@@ -363,22 +345,22 @@ a:hover, a:active, a:focus {
 }
 
 #gallery .col-md-6 {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #gallery .gallery-thumb {
   background-color: #ffffff;
-  box-shadow: 0px 1px 2px 0px rgba(90, 91, 95, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(90, 91, 95, 0.15);
   cursor: pointer;
   display: block;
   position: relative;
-  top: 0px;
+  top: 0;
   transition: all 0.4s ease-in-out;
 }
 
 #gallery .gallery-thumb:hover {
-  box-shadow: 0px 16px 22px 0px rgba(90, 91, 95, 0.3);
+  box-shadow: 0 16px 22px 0 rgba(90, 91, 95, 0.3);
   top: -5px;
 }
 
@@ -398,7 +380,7 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 #contact .col-md-4 {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 #contact .col-md-12 {
@@ -452,9 +434,9 @@ a:hover, a:active, a:focus {
 }
 
 .blog-post-thumb:last-child {
-  border-bottom: 0px;
+  border-bottom: 0;
   padding-bottom: 32px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .blog-post-image,
@@ -565,7 +547,7 @@ a:hover, a:active, a:focus {
 
 #about .col-md-6, #about .col-md-4,
 .blog-comment-form .col-md-4 {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .blog-comment-form .form-control {
@@ -610,8 +592,8 @@ a:hover, a:active, a:focus {
 }
 
 #blog-single-post .blog-single-post-image .col-md-4 {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 22px;
 }
 
@@ -633,7 +615,7 @@ a:hover, a:active, a:focus {
 footer {
     background: #000;
     color: #ffffff;
-    padding: 80px 0px;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -657,8 +639,8 @@ footer .footer-copyright {
 /* Back top */
 .go-top {
   background-color: #ffffff;
-  box-shadow: 1px 1.732px 12px 0px rgba( 0, 0, 0, .14 ), 1px 1.732px 3px 0px rgba( 0, 0, 0, .12 );
-  transition : all 1s ease;
+  box-shadow: 1px 1.732px 12px 0 rgba( 0, 0, 0, .14 ), 1px 1.732px 3px 0 rgba( 0, 0, 0, .12 );
+  transition: all 1s ease;
   bottom: 2em;
   right: 2em;
   color: #333;
@@ -748,7 +730,7 @@ footer .footer-copyright {
   }
 
   #about .col-md-6 img {
-    padding-left: 0px;
+    padding-left: 0;
   }
 
   #blog-single-post .blog-single-post-image img {
