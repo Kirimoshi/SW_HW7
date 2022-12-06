@@ -1,1 +1,110 @@
-/* Write your styles here */
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator-block {
+    background: #566885;
+    border: 3px solid #252d42;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    width: 240px;
+    height: 300px;
+}
+
+.numbers-block {
+    box-sizing: border-box;
+    width: 160px;
+    height: 200px;
+    padding: 5px;
+    background: #d6e1ef;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        "empty-cell1 empty-cell2 clear-sign divider-sign"
+        "number-9 number-8 number-7 multiply-sign"
+        "number-6 number-5 number-4 add-sign"
+        "number-3 number-2 number-1 subtract-sign"
+        "empty-cell3 number-0 empty-cell4 equal-sign";
+    column-gap: 3px;
+    row-gap: 3px;
+}
+
+.number-cell {
+    background: #d6e1ef;
+    border: 1px solid #252d42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.empty-cell-common {
+    background: #566885;
+    color: #566885;
+}
+.empty-cell1 {
+    grid-area: empty-cell1;
+}
+.empty-cell2 {
+    grid-area: empty-cell2;
+}
+.empty-cell3 {
+    grid-area: empty-cell3;
+}
+.empty-cell4 {
+    grid-area: empty-cell4;
+}
+
+.number-9 {
+    grid-area: number-9;
+}
+.number-8 {
+    grid-area: number-8;
+}
+.number-7 {
+    grid-area: number-7;
+}
+.number-6 {
+    grid-area: number-6;
+}
+.number-5 {
+    grid-area: number-5;
+}
+.number-4 {
+    grid-area: number-4;
+}
+.number-3 {
+    grid-area: number-3;
+}
+.number-2 {
+    grid-area: number-2;
+}
+.number-1 {
+    grid-area: number-1;
+}
+.number-0 {
+    grid-area: number-0;
+}
+.clear-sign {
+    grid-area: clear-sign;
+}
+.divider-sign {
+    grid-area: divider-sign;
+}
+.multiply-sign {
+    grid-area: multiply-sign;
+}
+.add-sign {
+    grid-area: add-sign;
+}
+.subtract-sign {
+    grid-area: subtract-sign;
+}
+.equal-sign {
+    grid-area: equal-sign;
+}
