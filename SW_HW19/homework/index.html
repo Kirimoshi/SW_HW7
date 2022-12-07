@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +25,10 @@
         <div class="number-9 number-cell">9</div>
         <div class="number-0 number-cell">0</div>
         <div class="clear-sign number-cell">C</div>
-        <div class="divider-sign number-cell">/</div>
-        <div class="multiply-sign number-cell">*</div>
-        <div class="add-sign number-cell">+</div>
-        <div class="subtract-sign number-cell">-</div>
+        <div class="divider-sign arithmetic number-cell">/</div>
+        <div class="multiply-sign arithmetic number-cell">*</div>
+        <div class="add-sign arithmetic number-cell">+</div>
+        <div class="subtract-sign arithmetic number-cell">-</div>
         <div class="equal-sign number-cell">=</div>
         <div class="empty-cell1 empty-cell-common">.</div>
         <div class="empty-cell2 empty-cell-common">.</div>
@@ -36,7 +36,17 @@
         <div class="empty-cell4 empty-cell-common">.</div>
       </div>
     </div>
-    <div class="logs-block"></div>
+    <div class="logs-block">
+      <div class="logs-block__line">
+        <div class="logs-block__empty-circle">
+          <svg class="logs-block__empty-circle-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"/></svg>
+        </div>
+
+        <div class="logs-block__close-sign">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+        </div>
+      </div>
+    </div>
   </div>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/index.js"></script>
