@@ -30,11 +30,12 @@
 .logs-block__empty-circle {
     width: 20px;
     height: 20px;
-    display: none;
+    /*display: none;*/
 }
 .logs-block__empty-circle-clone {
     width: 20px;
     height: 20px;
+    display: block;
 }
 .logs-block__empty-circle-svg {
     fill: red;
@@ -52,13 +53,14 @@
 .logs-block__close-sign {
     width: 20px;
     height: 20px;
-    display: none;
+    /*display: none;*/
 }
 .logs-block__close-sign-clone {
     width: 20px;
     height: 20px;
+    display: block;
 }
-.logs-block__close-sign-clone:hover {
+.logs-block__close-sign:hover, .logs-block__close-sign-clone:hover {
     cursor: pointer;
     fill: red;
 }
@@ -66,7 +68,7 @@
 .logs-block__line {
     display: flex;
     justify-content: space-around;
-    column-gap: 10px;
+    width: 200px;
 }
 
 #screen-block {
