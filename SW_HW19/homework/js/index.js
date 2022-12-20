@@ -4,7 +4,7 @@ let counter = 0;
 function addLogLine(result) {
     let logEquation;
     [logEquation, screenBlockContent] = [screenBlockContent, result];
-    $( "#screen-block" ).val(result);
+    $( '#screen-block' ).val(result);
 
     /*let newLogLine = document.createElement('div');
     $( newLogLine ).addClass('logs-block__line');
@@ -31,7 +31,7 @@ function addLogLine(result) {
     let newLogEquation = document.createElement('span');
     $( newLogEquation ).css('margin-right', 'auto');
     $( newLogEquation ).css('margin-left', 'auto');
-    newLogEquation.textContent = (`${logEquation}=${result}`);
+    newLogEquation.textContent = `${logEquation}=${result}`;
     if ( newLogEquation.textContent.includes('48') ) {
         $( newLogEquation ).css('text-decoration', 'underline');
     }
@@ -44,8 +44,8 @@ function addLogLine(result) {
     $( '.logs-block' ).prepend( newLogLine );
 }
 
-$( ".numbers-block" ).click(function( event ) {
-    if ($( event.target ).hasClass("equal-sign")) {
+$( '.numbers-block' ).click(function( event ) {
+    if ($( event.target ).hasClass('equal-sign')) {
         if ( screenBlockContent.includes('+') ) {
             let operatorIndex = screenBlockContent.indexOf('+');
             let firstOperand = screenBlockContent.slice(0, operatorIndex);
@@ -75,7 +75,7 @@ $( ".numbers-block" ).click(function( event ) {
             let firstOperand = screenBlockContent.slice(0, operatorIndex);
             let secondOperand = screenBlockContent.slice(operatorIndex + 1);
             if (secondOperand === '0') {
-                $( "#screen-block" ).val('ERROR').css('color', 'red');
+                $( '#screen-block' ).val('ERROR').css('color', 'red');
             } else {
                 let result = (Number(firstOperand) / Number(secondOperand)).toString();
 
@@ -87,20 +87,21 @@ $( ".numbers-block" ).click(function( event ) {
 
     if (event.target.textContent === 'C') {
         screenBlockContent = '';
-        $( "#screen-block" ).val(screenBlockContent);
+        $( '#screen-block' ).val(screenBlockContent);
         counter = 0;
-    } else if ($( event.target ).hasClass("empty-cell-common") !== true &&
-                                                        $( event.target ).hasClass("equal-sign") !== true) {
-        if ($( event.target ).hasClass("arithmetic") && counter >= 1) {
-            screenBlockContent = screenBlockContent.replace(screenBlockContent.at(-1), event.target.textContent);
-            $( "#screen-block" ).val(screenBlockContent);
-        } else if ($( event.target ).hasClass("arithmetic") && counter === 0) {
+    } else if ($( event.target ).hasClass('empty-cell-common') !== true &&
+                                                        $( event.target ).hasClass('equal-sign') !== true) {
+        if ($( event.target ).hasClass('arithmetic') && counter >= 1) {
+            const lastIndex = -1;
+            screenBlockContent = screenBlockContent.replace(screenBlockContent.at(lastIndex), event.target.textContent);
+            $( '#screen-block' ).val(screenBlockContent);
+        } else if ($( event.target ).hasClass('arithmetic') && counter === 0) {
             counter++;
             screenBlockContent += `${event.target.textContent}`;
-            $( "#screen-block" ).val(screenBlockContent);
+            $( '#screen-block' ).val(screenBlockContent);
         } else {
             screenBlockContent += `${event.target.textContent}`;
-            $( "#screen-block" ).val(screenBlockContent);
+            $( '#screen-block' ).val(screenBlockContent);
         }
     }
 });
@@ -136,8 +137,8 @@ $( '.logs-block__empty-circle-svg' ).click(function( event ) {
     });
 });*/
 
-$( ".logs-block" ).on('click', function( event ) {
-    if ( $( event.target ).hasClass("logs-block__close-sign") ) {
+$( '.logs-block' ).on('click', function( event ) {
+    if ( $( event.target ).hasClass('logs-block__close-sign') ) {
         $( event.target ).parent().remove();
     }
 })
